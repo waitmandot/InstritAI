@@ -67,9 +67,6 @@ The assistant integrates the following APIs and tools:
 - **Environment Management:** dotenv
 - **Custom Dataset:** Hugging Face
 
-## Getting Started
-To set up and run the project on your local machine, follow these steps:
-
 ## File Mapping
 
 ### docs/
@@ -88,6 +85,8 @@ To set up and run the project on your local machine, follow these steps:
 - **requirements.txt**: Lists required Python dependencies.
 - **system_prompt.json**: Contains the initial system prompt for the assistant.
 
+## Getting Started
+To set up and run the project on your local machine, follow these steps:
 
 ### Prerequisites
 1. Python 3.9+
