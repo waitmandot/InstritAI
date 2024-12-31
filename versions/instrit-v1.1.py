@@ -28,7 +28,7 @@ MIN_P = float(os.getenv("MIN_P", 0))
 TOP_A = float(os.getenv("TOP_A", 0))
 
 # Inicialização da conversa
-with open("system_prompt.json", "r") as file:
+with open("../system_prompt.json", "r") as file:
     system_prompt = json.load(file)
 conversation_history = [system_prompt]
 

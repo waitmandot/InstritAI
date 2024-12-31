@@ -70,6 +70,25 @@ The assistant integrates the following APIs and tools:
 ## Getting Started
 To set up and run the project on your local machine, follow these steps:
 
+## File Mapping
+
+### docs/
+
+- **README.md**: Refactored and detailed project documentation.
+- **LICENSE**: Licensing file for the project.
+- **CHANGELOG.md**: Contains version histories and updates.
+
+### versions/
+
+- **instrit-v1.1.py**: Stable implementation of the initial project version.
+
+### Root Directory
+
+- **.gitignore**: Specifies untracked files for Git.
+- **requirements.txt**: Lists required Python dependencies.
+- **system_prompt.json**: Contains the initial system prompt for the assistant.
+
+
 ### Prerequisites
 1. Python 3.9+
 2. Installed dependencies:
@@ -78,12 +97,18 @@ To set up and run the project on your local machine, follow these steps:
    ```
 3. Environment variables configured in a `.env` file:
    ```env
-   API_KEY=<your_openrouter_api_key>
-   API_URL=<your_openrouter_api_url>
-   MODEL=meta-llama/llama-3.2-3b-instruct:free
-   MAX_TOKENS=500
-   TEMPERATURE=0.3
-   # Add other configurations as needed
+    API_KEY=<your_openrouter_api_key>-or-v1-a6d5ab4b76cac9b71289ab7af450cb3a0e8b350278a3378b260e776bbce0a105
+    API_URL=https://openrouter.ai/api/v1/chat/completions
+    MODEL=meta-llama/llama-3.2-3b-instruct:free
+    MAX_TOKENS=500
+    TEMPERATURE=0.3
+    TOP_P=1
+    TOP_K=0
+    FREQUENCY_PENALTY=0.5
+    PRESENCE_PENALTY=0.5
+    REPETITION_PENALTY=1.10
+    MIN_P=0
+    TOP_A=0
    ```
 
 ### Running the Project
