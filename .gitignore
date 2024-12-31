@@ -1,0 +1,93 @@
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Sistema Operacional
+.DS_Store
+Thumbs.db
+
+# Dependências
+/node_modules/
+/.bower_components/
+/.pnp/
+/.pnp.js
+
+# Build e Output
+/dist/
+/build/
+/.out/
+/coverage/
+
+# Editor de Código
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Configuração do Sistema Operacional
+*.swp
+*.lock
+*.tmp
+*.pid
+*.seed
+*.pid.lock
+
+# Arquivos do Git
+*.orig
+*.rej
+*~
+*.bak
+
+# Ambientes Virtuais e Pacotes
+.env
+.venv/
+.venv/*
+__pycache__/
+*.py[cod]
+
+# Configurações do Docker
+.dockerignore
+
+# CI/CD e Deploy
+/.terraform/
+/*.tfstate
+*.tfstate.*
+.mypy_cache/
+.pytest_cache/
+
+# Linguagens Específicas
+# Python
+*.pyc
+*.pyo
+
+
+
+# Ruby
+/vendor/
+
+# Go
+/bin/
+*.exe
+
+# Logs personalizados
+coverage/
+
+# Arquivos de configuração local
+.env.local
+.env.*
+.envrc
+config.toml
+
+# Maven e Java
+target/
+*.iml
+
+# Outros:
+localstorage.db
+__pycache__
