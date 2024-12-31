@@ -11,6 +11,7 @@ Welcome to my project, **Industrial Maintenance AI Assistant**! This repository 
   - [Dataset](#dataset)
   - [APIs and Tools](#apis-and-tools)
 - [Technologies Used](#technologies-used)
+- [File Mapping](#file-mapping)
 - [Getting Started](#getting-started)
 - [Future Work](#future-work)
 - [Acknowledgments](#acknowledgments)
