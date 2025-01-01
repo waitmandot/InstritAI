@@ -97,7 +97,7 @@ To set up and run the project on your local machine, follow these steps:
    ```
 3. Environment variables configured in a `.env` file:
    ```env
-    API_KEY=<your_openrouter_api_key>-or-v1-a6d5ab4b76cac9b71289ab7af450cb3a0e8b350278a3378b260e776bbce0a105
+    API_KEY=<your_openrouter_api_key>
     API_URL=https://openrouter.ai/api/v1/chat/completions
     MODEL=meta-llama/llama-3.2-3b-instruct:free
     MAX_TOKENS=500
