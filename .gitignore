@@ -24,8 +24,8 @@ Thumbs.db
 
 # Editor de Código
 .idea/
-.vscode/
-*.suo
+/.vscode/
+/.suo
 *.ntvs*
 *.njsproj
 *.sln
@@ -47,7 +47,7 @@ Thumbs.db
 # Ambientes Virtuais e Pacotes
 .env
 .venv/
-.venv/*
+/.venv/*
 __pycache__/
 *.py[cod]
 
@@ -59,14 +59,12 @@ __pycache__/
 /*.tfstate
 *.tfstate.*
 .mypy_cache/
-.pytest_cache/
+/.pytest_cache/
 
 # Linguagens Específicas
 # Python
 *.pyc
 *.pyo
-
-
 
 # Ruby
 /vendor/
@@ -91,3 +89,7 @@ target/
 # Outros:
 localstorage.db
 __pycache__
+
+# Pastas e arquivos para não versionar
+scripts/chunk_separator/output_files/
+scripts/query_classification/log/

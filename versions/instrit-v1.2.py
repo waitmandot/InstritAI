@@ -124,7 +124,7 @@ def custom_prompt(user_query, qdrant_client):
     results = search_query_in_qdrant(user_query, qdrant_client, top_k=3)
     source_knowledge = "\n".join(results)
     augment_prompt = f"""
-        You are FixIt, an assistant specialized in industrial machinery. Use exclusively the context below to answer the question. If the question is not related to the context, provide a generic response.
+        You are FixIt, an assistant specialized in industrial machinery. Use the context below to answer the question. If the question is not related to the context, provide a generic response.
         
         ### Context
         {source_knowledge}
@@ -133,7 +133,7 @@ def custom_prompt(user_query, qdrant_client):
         {user_query}
         
         ### Response Instructions
-        1. Respond clearly, concisely, and in Portuguese (Brazil).
+        1. Please answer clearly, concisely, objectively and briefly and in Portuguese (Brazil).
         2. If necessary to list information, use bullet points or enumeration.
         3. Whenever possible, justify your response based on the provided context.
         4. Avoid making inferences outside the context.

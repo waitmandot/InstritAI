@@ -2,12 +2,13 @@ import fitz  # PyMuPDF
 import json
 import re
 import os
+import time  # Importa o módulo de tempo
 from typing import List
 
 # Define os diretórios de entrada e saída
 INPUT_DIRECTORY = "input_files"
 OUTPUT_DIRECTORY = "output_files"
-os.makedirs(OUTPUT_DIRECTORY, exist_ok=True)
+os.makedirs(OUTPUT_DIRECTORY, exist_ok=True)  # Cria o diretório output_files se não existir
 
 # Remove arquivos antigos do diretório de saída
 def limpar_diretorio_saida():
@@ -50,6 +51,8 @@ def processar_pdfs():
 
     LIMITE_CARACTERES = 500  # Define o limite de caracteres por chunk
 
+    start_time = time.time()  # Registra o tempo de início
+
     for pdf_file_name in os.listdir(INPUT_DIRECTORY):
         if pdf_file_name.endswith(".pdf"):
             pdf_path = os.path.join(INPUT_DIRECTORY, pdf_file_name)
@@ -82,6 +85,10 @@ def processar_pdfs():
                 json.dump(dados_extraidos, json_output_file, ensure_ascii=False, indent=4)
 
             print(f"Extração concluída para {pdf_file_name}. JSON salvo em {output_file_path}.")
+
+    end_time = time.time()  # Registra o tempo de fim
+    elapsed_time = end_time - start_time  # Calcula o tempo total de execução
+    print(f"Processamento concluído em {elapsed_time:.2f} segundos.")
 
 if __name__ == "__main__":
     processar_pdfs()
