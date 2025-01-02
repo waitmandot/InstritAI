@@ -17,7 +17,7 @@ API_URL = os.getenv("API_URL")
 
 # Parâmetros do modelo
 MODEL = os.getenv("MODEL", "meta-llama/llama-3.2-3b-instruct:free")
-MAX_TOKENS = int(os.getenv("MAX_TOKENS", 500))
+MAX_TOKENS = int(os.getenv("MAX_TOKENS", 600))
 TEMPERATURE = float(os.getenv("TEMPERATURE", 0.3))
 TOP_P = float(os.getenv("TOP_P", 1))
 TOP_K = int(os.getenv("TOP_K", 0))

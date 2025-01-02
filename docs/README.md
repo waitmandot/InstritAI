@@ -100,7 +100,7 @@ To set up and run the project on your local machine, follow these steps:
     API_KEY=<your_openrouter_api_key>
     API_URL=https://openrouter.ai/api/v1/chat/completions
     MODEL=meta-llama/llama-3.2-3b-instruct:free
-    MAX_TOKENS=0
+    MAX_TOKENS=600
     TEMPERATURE=1
     TOP_P=1
     TOP_K=0

@@ -17,7 +17,7 @@ API_URL = os.getenv("API_URL")
 
 # Parâmetros do modelo
 MODEL = os.getenv("MODEL", "meta-llama/llama-3.2-3b-instruct:free")
-MAX_TOKENS = int(os.getenv("MAX_TOKENS", 500))
+MAX_TOKENS = int(os.getenv("MAX_TOKENS", 600))
 TEMPERATURE = float(os.getenv("TEMPERATURE", 0.3))
 TOP_P = float(os.getenv("TOP_P", 1))
 TOP_K = int(os.getenv("TOP_K", 0))
@@ -121,28 +121,43 @@ def search_query_in_qdrant(search_query, qdrant_client, top_k=3):
 
 # Função para lidar com prompts personalizados
 def custom_prompt(user_query, qdrant_client):
-    results = search_query_in_qdrant(user_query, qdrant_client, top_k=3)
-    source_knowledge = "\n".join(results)
-    augment_prompt = f"""
-        You are FixIt, an assistant specialized in industrial machinery. Use the context below to answer the question. If the question is not related to the context, provide a generic response.
-        
-        ### Context
-        {source_knowledge}
-        
-        ### Question
-        {user_query}
-        
-        ### Response Instructions
-        1. Please answer clearly, concisely, objectively and briefly and in Portuguese (Brazil).
-        2. If necessary to list information, use bullet points or enumeration.
-        3. Whenever possible, justify your response based on the provided context.
-        4. Avoid making inferences outside the context.
-        5. Be polite, maintain a professional tone, and prioritize safety.
-    """
+    # Determina se é necessário consultar o Qdrant
+    if query_classification(user_query):
+        # Se `query_classification` retornar True, faz a pesquisa no Qdrant
+        results = search_query_in_qdrant(user_query, qdrant_client, top_k=3)
+        source_knowledge = "\n".join(results)
+        augment_prompt = f"""
+            You are FixIt, an assistant specialized in industrial machinery. Use the context below to answer the question. If the question is not related to the context, provide a generic response.
+
+            ### Context
+            {source_knowledge}
+
+            ### Question
+            {user_query}
+
+            ### Response Instructions
+            1. Please answer clearly, concisely, objectively and briefly and in Portuguese (Brazil).
+            2. If necessary to list information, use bullet points or enumeration.
+            3. Whenever possible, justify your response based on the provided context.
+            4. Avoid making inferences outside the context.
+            5. Be polite, maintain a professional tone, and prioritize safety.
+        """
+    else:
+        # Caso contrário, responde genericamente
+        augment_prompt = f"""
+            You are FixIt, an assistant specialized in industrial machinery. Answer the question directly and generically, without relying on external context.
+
+            ### Question
+            {user_query}
+
+            ### Response Instructions
+            1. Please answer clearly, concisely, objectively and briefly and in Portuguese (Brazil).
+            2. Be polite, maintain a professional tone, and prioritize safety.
+        """
 
     print(augment_prompt)
 
-    # Envia para o modelo e processa a resposta
+    # Envia o prompt para o modelo e processa a resposta
     conversation_history.append({"role": "user", "content": augment_prompt})
 
     payload = {
@@ -171,6 +186,64 @@ def custom_prompt(user_query, qdrant_client):
         print("Assistente:", model_response)
     else:
         print(f"[ERRO API] {response.status_code} - {response.text}")
+
+
+def query_classification(query):
+    prompt = f"""
+    You are a technical AI assistant specialized in industrial machinery and maintenance practices. Your task is to determine whether answering a question requires consulting technical documentation, manuals, or detailed records. Your response must be either "y" (for yes) or "n" (for no), without any variation in formatting, spacing, or punctuation.
+
+    ### When to respond "y":
+    1. The question explicitly mentions:
+       - Manuals, guides, technical documents, or records.
+    2. The question requires specific details that are:
+       - Machine-specific (e.g., part numbers, capacities, or tolerances).
+       - Dependent on manufacturer recommendations or standards.
+    3. The requested information impacts:
+       - Equipment safety, reliability, or operational efficiency.
+
+    ### When to respond "n":
+    1. The question is conversational, generic, or conceptual (e.g., "What is maintenance?").
+    2. The answer is widely understood without reference to specific documentation.
+    3. The question does not involve technical precision or machine-specific details.
+
+    ### Examples:
+    - "What is the difference between corrective and preventive maintenance?" → n
+    - "How much oil does a WEG X123 compressor need?" → y
+    - "Do I need to read the manual to maintain a CNC machine?" → y
+    - "What are the benefits of lubrication?" → n
+    - "What type of grease is recommended for high-speed bearings in the WEG ABC123 motor?" → y
+    - "Can I use synthetic oil for general machinery lubrication?" → n
+    - "According to the manual, what is the correct torque for bolts on a CNC lathe?" → y
+
+    ### Output Rules:
+    - Respond ONLY with "y" or "n".
+    - Do not include any punctuation, spaces, or symbols in your response.
+    - Do not provide explanations, variations, or additional information.
+
+    Question: {query}
+    Answer:
+    """
+
+    payload = {
+        "model": MODEL,
+        "prompt": prompt.strip(),
+        "max_tokens": 2,
+        "temperature": 0.0,
+    }
+    headers = {
+        "Authorization": f"Bearer {API_KEY}",
+        "Content-Type": "application/json",
+    }
+
+    response = requests.post(API_URL, headers=headers, json=payload)
+    response.raise_for_status()
+    result = response.json().get("choices", [{}])[0].get("text", "").strip()
+
+    if result.lower() == "y":
+        return True
+    else:
+        return False
+
 
 
 if __name__ == "__main__":
