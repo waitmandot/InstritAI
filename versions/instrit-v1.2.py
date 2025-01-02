@@ -32,6 +32,7 @@ with open("../system_prompt.json", "r") as file:
     system_prompt = json.load(file)
 conversation_history = [system_prompt]
 
+
 # Função para obter embeddings usando a API Nomic
 def get_embedding(context, model="nomic-embed-text"):
     response = requests.post(
@@ -42,6 +43,7 @@ def get_embedding(context, model="nomic-embed-text"):
         return response.json().get("embedding")
     print(f"[ERRO] Falha ao obter embedding: {response.text}")
     return None
+
 
 # Função para carregar o conjunto de dados e preparar documentos
 def load_and_prepare_data():
@@ -54,6 +56,7 @@ def load_and_prepare_data():
     print("[LOG] Carregando documentos no formato esperado...")
     loader = DataFrameLoader(docs, page_content_column="chunk")
     return loader.load()
+
 
 # Função para gerar embeddings de forma sequencial
 def generate_embeddings(documents_list):
@@ -69,6 +72,7 @@ def generate_embeddings(documents_list):
             print(f"[ERRO] Falha ao gerar embedding para o documento {idx}/{total_docs}.")
         print(f"[LOG] Progresso: {idx}/{total_docs} documentos processados.")
     return embeddings_list
+
 
 # Função para configurar e adicionar documentos ao Qdrant
 def add_documents_to_qdrant(docs, embed_list):
@@ -97,8 +101,9 @@ def add_documents_to_qdrant(docs, embed_list):
     print("[LOG] Documentos adicionados com sucesso.")
     return qdrant_client
 
+
 # Função para realizar busca no Qdrant
-def search_query_in_qdrant(search_query, qdrant_client, top_k=2):
+def search_query_in_qdrant(search_query, qdrant_client, top_k=3):
     print(f"[LOG] Gerando embedding da pergunta...")
     embedding = get_embedding(search_query)
     if not embedding:
@@ -113,16 +118,27 @@ def search_query_in_qdrant(search_query, qdrant_client, top_k=2):
     print("[LOG] Retornando resposta...")
     return [result.payload["content"] for result in search_result]
 
+
 # Função para lidar com prompts personalizados
 def custom_prompt(user_query, qdrant_client):
     results = search_query_in_qdrant(user_query, qdrant_client, top_k=3)
     source_knowledge = "\n".join(results)
-    augment_prompt = f"""Use o contexto abaixo para responder à pergunta e se não houver relação responda normalmente.
-
-    Contexto:
-    {source_knowledge}
-
-    Pergunta: {user_query}"""
+    augment_prompt = f"""
+        You are FixIt, an assistant specialized in industrial machinery. Use exclusively the context below to answer the question. If the question is not related to the context, provide a generic response.
+        
+        ### Context
+        {source_knowledge}
+        
+        ### Question
+        {user_query}
+        
+        ### Response Instructions
+        1. Respond clearly, concisely, and in Portuguese (Brazil).
+        2. If necessary to list information, use bullet points or enumeration.
+        3. Whenever possible, justify your response based on the provided context.
+        4. Avoid making inferences outside the context.
+        5. Be polite, maintain a professional tone, and prioritize safety.
+    """
 
     print(augment_prompt)
 
@@ -155,6 +171,7 @@ def custom_prompt(user_query, qdrant_client):
         print("Assistente:", model_response)
     else:
         print(f"[ERRO API] {response.status_code} - {response.text}")
+
 
 if __name__ == "__main__":
     print("[LOG] Iniciando pipeline...")
