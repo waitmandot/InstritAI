@@ -145,7 +145,7 @@ def custom_prompt(user_query, qdrant_client):
     else:
         # Caso contrário, responde genericamente
         augment_prompt = f"""
-            You are FixIt, an assistant specialized in industrial machinery. Answer the question directly and generically, without relying on external context.
+            You are FixIt, an assistant specialized in industrial machinery. Answer the question directly.
 
             ### Question
             {user_query}
