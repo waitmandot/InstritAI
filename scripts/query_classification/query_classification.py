@@ -2,6 +2,7 @@ import os
 import requests
 from dotenv import load_dotenv
 import time  # Importa o módulo de tempo
+from deep_translator import GoogleTranslator
 
 load_dotenv()
 
@@ -28,8 +29,6 @@ if not os.path.exists(log_dir):
 
 # Função para enviar uma consulta ao modelo
 def ask_model(query):
-    # Marca o tempo de início da consulta
-
     prompt = f"""
     You are an advanced technical AI assistant specialized in industrial machinery, maintenance practices, and operational standards. Your primary task is to determine whether a question requires consulting technical documentation, manuals, or detailed records (referred to as RAG). Respond with "y" (yes) or "n" (no), strictly following the guidelines below.
 
@@ -38,14 +37,13 @@ def ask_model(query):
     #### Respond "y" if:
     1. The question explicitly or implicitly requires:
        - Machine-specific details (e.g., part numbers, torque values, tolerances, operational parameters).
-       - Manufacturer guidelines or recommendations.
+       - Manufacturer recommendations, such as maintenance schedules, intervals, or operational guidelines.
        - Detailed procedural instructions (e.g., assembly, disassembly, calibration, alignment).
-       - Maintenance schedules, intervals, or component-specific standards.
     2. The requested information has implications for:
        - Safety, reliability, or performance of equipment.
        - Compliance with industry or manufacturer standards.
     3. The answer depends on:
-       - Specific technical records or manuals.
+       - Specific technical records, manuals, or manufacturer-provided recommendations.
     
     #### Respond "n" if:
     1. The question is conceptual, generic, or educational (e.g., definitions, comparisons).
@@ -53,7 +51,7 @@ def ask_model(query):
     3. It does not involve technical precision, safety-critical details, or manufacturer-specific data.
     
     ### Examples:
-    - "What is maintenance preditiva and how does it work?" → n
+    - "What is predictive maintenance and how does it work?" → n
     - "What is the recommended operating pressure for an Atlas Copco GA30 compressor?" → y
     - "How do I disassemble and reassemble a centrifugal pump?" → y
     - "Can I use common grease for high-speed bearings?" → n
@@ -133,6 +131,8 @@ if __name__ == "__main__":
         if user_input.lower() in ["exit", "quit", "fechar", "close"]:
             print("Exiting the console. Goodbye!")
             break
+
+        user_input = GoogleTranslator(source='auto', target='en').translate(user_input)
 
         # Envia a consulta e espera pela resposta da IA
         response = ask_model(user_input)
