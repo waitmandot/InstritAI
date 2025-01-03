@@ -191,7 +191,7 @@ def custom_prompt(user_query, qdrant_client):
 def query_classification(query):
     prompt = f"""
     You are a technical AI assistant specialized in industrial machinery and maintenance practices. Your task is to determine whether answering a question requires consulting technical documentation, manuals, or detailed records. Your response must be either "y" (for yes) or "n" (for no), without any variation in formatting, spacing, or punctuation.
-
+    
     ### When to respond "y":
     1. The question explicitly mentions:
        - Manuals, guides, technical documents, or records.
@@ -200,12 +200,12 @@ def query_classification(query):
        - Dependent on manufacturer recommendations or standards.
     3. The requested information impacts:
        - Equipment safety, reliability, or operational efficiency.
-
+    
     ### When to respond "n":
     1. The question is conversational, generic, or conceptual (e.g., "What is maintenance?").
     2. The answer is widely understood without reference to specific documentation.
     3. The question does not involve technical precision or machine-specific details.
-
+    
     ### Examples:
     - "What is the difference between corrective and preventive maintenance?" → n
     - "How much oil does a WEG X123 compressor need?" → y
@@ -214,12 +214,16 @@ def query_classification(query):
     - "What type of grease is recommended for high-speed bearings in the WEG ABC123 motor?" → y
     - "Can I use synthetic oil for general machinery lubrication?" → n
     - "According to the manual, what is the correct torque for bolts on a CNC lathe?" → y
-
+    - "According to documents, what are the review deadlines for industrial equipment?" → y
+    - "Can you list the most common types of lubrication?" → y
+    - "What are the potential parts for lubrication on a lathe?" → y
+    - "What is a compressor?" → n
+    
     ### Output Rules:
     - Respond ONLY with "y" or "n".
     - Do not include any punctuation, spaces, or symbols in your response.
     - Do not provide explanations, variations, or additional information.
-
+    
     Question: {query}
     Answer:
     """
