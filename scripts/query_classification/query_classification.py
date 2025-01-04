@@ -31,35 +31,34 @@ if not os.path.exists(log_dir):
 def ask_model(query):
     prompt = f"""
     You are an advanced technical AI assistant specialized in industrial machinery, maintenance practices, and operational standards. Your primary task is to determine whether a question requires consulting technical documentation, manuals, or detailed records (referred to as RAG). Respond with "y" (yes) or "n" (no), strictly following the guidelines below.
-
+    
     ### Guidelines:
     
     #### Respond "y" if:
-    1. The question explicitly or implicitly requires:
-       - Machine-specific details (e.g., part numbers, torque values, tolerances, operational parameters).
-       - Manufacturer recommendations, such as maintenance schedules, intervals, or operational guidelines.
-       - Detailed procedural instructions (e.g., assembly, disassembly, calibration, alignment).
-    2. The requested information has implications for:
-       - Safety, reliability, or performance of equipment.
-       - Compliance with industry or manufacturer standards.
-    3. The answer depends on:
-       - Specific technical records, manuals, or manufacturer-provided recommendations.
+    1. The question requires any form of technical, detailed, or specific information, including but not limited to:
+       - Definitions of machinery components or their functions (e.g., "What are the parts of a lathe?").
+       - Maintenance practices or guidelines (e.g., "How to perform preventive maintenance on a milling machine?").
+       - Lubricants, fluids, or material specifications (e.g., "What oil should be used for a refrigerator?").
+       - Operational, assembly, or disassembly instructions.
+       - Any information about a specific machine model, brand, or type (e.g., "Parts of an industrial fan," "How to troubleshoot an XYZ Model 500?").
+       - Descriptions or classifications of machines or their functions.
     
     #### Respond "n" if:
-    1. The question is conceptual, generic, or educational (e.g., definitions, comparisons).
-    2. The information can be provided using widely known principles without referencing specific documentation.
-    3. It does not involve technical precision, safety-critical details, or manufacturer-specific data.
+    1. The question involves superficial or conversational inputs (e.g., "Hello," "Who are you?").
+    2. It reflects a continuation or exploration of a symptom or issue without requiring documentation (e.g., "It is making noise," "The machine stopped working.").
+    3. It is explicitly not technical or specific enough to require reference materials.
     
     ### Examples:
-    - "What is predictive maintenance and how does it work?" → n
-    - "What is the recommended operating pressure for an Atlas Copco GA30 compressor?" → y
-    - "How do I disassemble and reassemble a centrifugal pump?" → y
-    - "Can I use common grease for high-speed bearings?" → n
-    - "What is the ideal torque for bolts on a WEG 50 HP motor?" → y
-    - "What are the main types of bearing failures?" → n
-    - "What hydraulic fluid is recommended for high loads at -20°C?" → y
-    - "What is the difference between corrective and preventive maintenance?" → n
-    - "How to measure the alignment of a motor with coupled equipment?" → y
+    - "What are the parts of a lathe?" → y
+    - "How to perform preventive maintenance on a milling machine?" → y
+    - "What oil should be used for a refrigerator?" → y
+    - "Parts of an industrial fan?" → y
+    - "Hello, who are you?" → n
+    - "It is making noise." → n
+    - "What are the main types of lubrication?" → y
+    - "What is a lathe?" → y
+    - "The machine stopped working." → n
+    - "What are the benefits of using hydraulic systems in heavy machinery?" → y
     
     ### Rules for Output:
     1. Respond **only** with "y" or "n".
@@ -67,9 +66,9 @@ def ask_model(query):
     3. Maintain a consistent response format for every query.
     
     ### Decision Process:
-    1. **Keyword Identification**: Look for terms indicating machine-specific details, procedural actions, or manufacturer dependencies (e.g., "procedures," "recommended," "specific torque").
-    2. **Context Evaluation**: Determine if the question addresses a general concept or requires precise technical information.
-    3. **Apply the Guidelines**: Based on the context and keywords, classify the query as requiring RAG (y) or not requiring RAG (n).
+    1. **Keyword Identification**: Identify terms that indicate a need for technical details, machine parts, or operational information.
+    2. **Context Evaluation**: Assess whether the question involves a technical inquiry or a continuation of a previously described issue.
+    3. **Apply the Guidelines**: Classify the query based on the provided rules and respond accordingly.
     
     Question: {query}
     Answer:
@@ -91,7 +90,8 @@ def ask_model(query):
 
     try:
         response = requests.post(API_URL, headers=headers, json=payload)
-        response.raise_for_status()
+        print("Debug: API response JSON:", response.json())
+        response.raise_for_status()  # Levanta uma exceção se o status não for 2xx
         result = response.json().get("choices", [{}])[0].get("text", "").strip()
 
         # Marca o tempo após a resposta
