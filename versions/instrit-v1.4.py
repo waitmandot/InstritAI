@@ -17,7 +17,10 @@ load_dotenv()
 
 # OpenRouter API Configuration
 API_KEY = os.getenv("API_KEY")
-API_URL = os.getenv("API_URL")
+API_URL = os.getenv("https://openrouter.ai/api/v1/chat/completions")
+
+# Qdrant API Configuration
+QDRANT_KEY = os.getenv("QDRANT_KEY")
 
 # Model parameters
 MODEL = os.getenv("MODEL", "meta-llama/llama-3.2-3b-instruct:free")

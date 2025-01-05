@@ -13,7 +13,7 @@ load_dotenv()
 
 # Configuração da API do OpenRouter
 API_KEY = os.getenv("API_KEY")
-API_URL = os.getenv("API_URL")
+API_URL = os.getenv("https://openrouter.ai/api/v1/chat/completions")
 
 # Parâmetros do modelo
 MODEL = os.getenv("MODEL", "meta-llama/llama-3.2-3b-instruct:free")

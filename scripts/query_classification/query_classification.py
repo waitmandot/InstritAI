@@ -7,8 +7,8 @@ from deep_translator import GoogleTranslator
 load_dotenv()
 
 # Configuração da API
-API_KEY = os.getenv("API_KEY")  # Certifique-se de configurar sua chave no .env
-API_URL = os.getenv("API_URL")  # URL da API do modelo Llama
+API_KEY = os.getenv("API_KEY")
+API_URL = os.getenv("https://openrouter.ai/api/v1/chat/completions")
 MODEL = "meta-llama/llama-3.2-3b-instruct:free"
 
 # Verifica se as variáveis necessárias estão configuradas
