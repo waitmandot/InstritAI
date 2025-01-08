@@ -92,4 +92,4 @@ __pycache__
 
 # Pastas e arquivos para não versionar
 scripts/chunk_separator/output_files/
-scripts/query_classification/log/
+scripts/Query_classification/log/
