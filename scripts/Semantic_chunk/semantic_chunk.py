@@ -1,121 +1,106 @@
 import os
 import pdfplumber
+import re
+import requests
 import json
-from transformers import pipeline, AutoTokenizer, AutoModelForCausalLM
+from dotenv import load_dotenv
 
-# Carregar modelo de IA local com logs detalhados
-def carregar_modelo_local(modelo_nome="EleutherAI/gpt-neo-125M"):
-    print("[INFO] Iniciando o carregamento do modelo...")
-    try:
-        tokenizer = AutoTokenizer.from_pretrained(modelo_nome)
-        print("[INFO] Tokenizer carregado com sucesso.")
+# Carrega variáveis de ambiente do arquivo .env
+load_dotenv()
 
-        modelo = AutoModelForCausalLM.from_pretrained(modelo_nome)
-        print("[INFO] Modelo de IA carregado com sucesso.")
+# Configuração da API
+OPENROUTER_KEY = os.getenv("OPENROUTER_KEY")
+API_URL = "https://openrouter.ai/api/v1/chat/completions"
 
-        ia_pipeline = pipeline("text-generation", model=modelo, tokenizer=tokenizer, device=-1)
-        print("[INFO] Pipeline configurado com sucesso.")
-        return ia_pipeline, tokenizer
-    except Exception as e:
-        print(f"[ERRO] Ocorreu um erro ao carregar o modelo: {e}")
-        raise
+def clean_text(text):
+    # Remove linhas vazias, múltiplos espaços, sequências de hifens, underlines e espaços pontilhados
+    text = re.sub(r'\n\s*\n', '\n', text)  # Remove linhas vazias
+    text = re.sub(r' {2,}', ' ', text)  # Substitui múltiplos espaços por um único
+    text = re.sub(r'[_]{4,}', '', text)  # Remove sequências de underlines soltos com mais de 4 caracteres
+    text = re.sub(r'-{4,}', '', text)  # Remove sequências de hifens soltos com mais de 4 caracteres
+    text = re.sub(r'\.{2,}', '', text)  # Remove sequências de pontos
+    text = re.sub(r'\s+\.{2,}\s+', ' ', text)  # Remove linhas com espaços pontilhados
+    return text
 
-# Dividir texto em chunks respeitando o limite do modelo e tokens reais
-def dividir_em_chunks(texto, tokenizer, max_tokens=1024):
-    print("[INFO] Dividindo texto em chunks...")
-    tokens = tokenizer.encode(texto, truncation=False)
-    chunks = []
+def make_request(message):
+    """
+    Faz uma requisição para a IA para processar o texto.
 
-    for i in range(0, len(tokens), max_tokens):
-        chunk_tokens = tokens[i:i + max_tokens]
-        chunks.append(tokenizer.decode(chunk_tokens, skip_special_tokens=True))
+    Args:
+        message (str): Conteúdo a ser enviado ao modelo.
 
-    print(f"[INFO] Texto dividido em {len(chunks)} chunks.")
-    return chunks
+    Returns:
+        str: Resposta do modelo.
+    """
+    headers = {
+        "Authorization": f"Bearer {OPENROUTER_KEY}",
+    }
 
-# Processar texto com IA local
-def processar_texto_ia(ia_pipeline, texto, max_new_tokens=300):
-    print("[INFO] Processando texto com IA...")
-    prompt = (
-        "Organize o seguinte texto em tópicos claros, com títulos, resuma informações desnecessárias e prepare para um dataset de RAG: \n\n"
-        f"{texto}\n\n"
-        "Responda com um JSON estruturado assim: "
-        '{"tópicos": [{"título": "Título do Tópico", "conteúdo": "Resumo ou conteúdo estruturado"}]}'
-    )
-    try:
-        resposta = ia_pipeline(prompt, max_new_tokens=max_new_tokens, num_return_sequences=1)
-        print("[INFO] Texto processado com sucesso pela IA.")
-        return resposta[0]["generated_text"]
-    except Exception as e:
-        print(f"[ERRO] Ocorreu um erro ao processar o texto com a IA: {e}")
-        return None
+    payload = {
+        "model": "meta-llama/llama-3.1-8b-instruct:free",
+        "top_p": 0.9,
+        "temperature": 0.3,
+        "frequency_penalty": 0.2,
+        "presence_penalty": 0.2,
+        "repetition_penalty": 1.2,
+        "top_k": 50,
+        "messages": [
+            {
+                "role": "system",
+                "content": (
+                    "The response should be in English."
+                    "You are an AI specialized in processing and summarizing technical content. "
+                    "Your task is to extract the key concepts from the provided content, organizing them into a clear and coherent summary. "
+                    "You should focus on the technical aspects, ignoring irrelevant or disconnected information (such as names, places, or institutions), and ensure that the summary maintains a logical flow. "
+                    "The output must consist of multiple paragraphs, each with a focused subtitle. "
+                    "Each paragraph should concentrate on one primary concept, clearly explaining it while maintaining clarity and conciseness. "
+                    "Ensure that the information is logically sequenced and free from extraneous details, avoiding unnecessary separations, markdown characters, line breaks, or lists."
+                    "Your goal is to create a structured and cohesive summary that captures the essence of the technical content, while discarding any non-relevant references."
+                )
+            },
+            {"role": "user", "content": message},
+        ],
+    }
 
-# Função para extrair texto do PDF
-def extrair_texto_pdf(caminho_pdf):
-    print(f"[INFO] Extraindo texto do PDF: {caminho_pdf}")
-    try:
-        with pdfplumber.open(caminho_pdf) as pdf:
-            texto_total = ""
-            for pagina in pdf.pages:
-                texto_total += pagina.extract_text() + "\n"
-        print("[INFO] Extração de texto concluída com sucesso.")
-        return texto_total
-    except Exception as e:
-        print(f"[ERRO] Ocorreu um erro ao extrair texto do PDF: {e}")
-        return ""
+    response = requests.post(API_URL, headers=headers, data=json.dumps(payload))
+    if response.status_code == 200:
+        return response.json().get("choices", [{}])[0].get("message", {}).get("content", "No response content")
+    else:
+        return f"Error: {response.status_code}, {response.text}"
 
-# Estruturar dataset em JSON
-def criar_dataset_json(respostas_ia, caminho_saida):
-    print(f"[INFO] Criando dataset JSON em: {caminho_saida}")
-    try:
-        dataset = {"tópicos": []}
-        for resposta in respostas_ia:
-            if resposta:
-                try:
-                    chunk_dataset = json.loads(resposta)
-                    dataset["tópicos"].extend(chunk_dataset.get("tópicos", []))
-                except json.JSONDecodeError:
-                    print("[ERRO] Resposta inválida ignorada. Não foi possível processar o JSON.")
+def extract_text_from_pdfs():
+    # Diretórios de entrada e saída
+    input_dir = "input_files"
+    output_dir = "output_files"
 
-        with open(caminho_saida, "w", encoding="utf-8") as arquivo:
-            json.dump(dataset, arquivo, indent=4, ensure_ascii=False)
-        print(f"[INFO] Dataset salvo com sucesso em: {caminho_saida}")
-    except Exception as e:
-        print(f"[ERRO] Falha ao salvar o dataset JSON: {e}")
-        raise
+    # Cria os diretórios se não existirem
+    os.makedirs(input_dir, exist_ok=True)
+    os.makedirs(output_dir, exist_ok=True)
 
-# Processar todos os arquivos PDF no diretório input_files
-def processar_arquivos_diretorio(diretorio_input, diretorio_output, modelo_nome="EleutherAI/gpt-neo-125M"):
-    print("[INFO] Iniciando processamento dos arquivos no diretório...")
-    ia_pipeline, tokenizer = carregar_modelo_local(modelo_nome)
+    # Arquivo final para consolidar os resumos
+    consolidated_output = os.path.join(output_dir, "consolidated_summary.txt")
+    with open(consolidated_output, "w", encoding="utf-8") as consolidated_file:
 
-    arquivos = [f for f in os.listdir(diretorio_input) if f.endswith('.pdf')]
-    if not arquivos:
-        print("[INFO] Nenhum arquivo PDF encontrado no diretório.")
-        return
+        # Itera pelos arquivos na pasta de entrada
+        for file_name in os.listdir(input_dir):
+            if file_name.lower().endswith(".pdf"):
+                input_path = os.path.join(input_dir, file_name)
 
-    for arquivo in arquivos:
-        print(f"[INFO] Processando arquivo: {arquivo}...")
-        caminho_pdf = os.path.join(diretorio_input, arquivo)
-        nome_arquivo = os.path.splitext(arquivo)[0]
-        caminho_saida = os.path.join(diretorio_output, f"{nome_arquivo}.json")
+                # Extrai o texto do PDF
+                with pdfplumber.open(input_path) as pdf:
+                    for page_number, page in enumerate(pdf.pages, start=1):
+                        text = page.extract_text() or ""
+                        cleaned_text = clean_text(text)
+                        print(f"Processando página {page_number} do arquivo {file_name}...")
 
-        texto_pdf = extrair_texto_pdf(caminho_pdf)
-        if not texto_pdf.strip():
-            print(f"[ERRO] Arquivo {arquivo} vazio ou inválido. Ignorando.")
-            continue
+                        # Envia o texto limpo para a IA
+                        summarized_text = make_request(cleaned_text)
+                        consolidated_file.write(f"=== Resumo da Página {page_number} ({file_name}) ===\n\n")
+                        consolidated_file.write(f"{summarized_text}\n\n")
 
-        chunks = dividir_em_chunks(texto_pdf, tokenizer, max_tokens=512)  # Ajustar para lidar com modelos menores
-        respostas_ia = [processar_texto_ia(ia_pipeline, chunk) for chunk in chunks]
+                print(f"Arquivo processado: {file_name}")
 
-        criar_dataset_json(respostas_ia, caminho_saida)
+    print(f"Resumo consolidado salvo em: {consolidated_output}")
 
-# Diretórios de entrada e saída
-diretorio_input = "./input_files"
-diretorio_output = "./output_files"
-
-os.makedirs(diretorio_output, exist_ok=True)
-
-# Executar
 if __name__ == "__main__":
-    processar_arquivos_diretorio(diretorio_input, diretorio_output)
+    extract_text_from_pdfs()

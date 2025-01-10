@@ -12,7 +12,7 @@ import os
 load_dotenv()
 
 # Configuração da API do OpenRouter
-API_KEY = os.getenv("API_KEY")
+OPENROUTER_KEY = os.getenv("API_KEY")
 API_URL = os.getenv("https://openrouter.ai/api/v1/chat/completions")
 
 # Parâmetros do modelo

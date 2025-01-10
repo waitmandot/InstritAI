@@ -16,7 +16,7 @@ from deep_translator import GoogleTranslator
 load_dotenv()
 
 # OpenRouter API Configuration
-API_KEY = os.getenv("API_KEY")
+OPENROUTER_KEY = os.getenv("API_KEY")
 API_URL = os.getenv("https://openrouter.ai/api/v1/chat/completions")
 
 # Qdrant API Configuration
