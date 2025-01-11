@@ -253,6 +253,9 @@ def extract_text_from_pdfs():
 
                 # Processamento por página
                 for page_number, page in enumerate(pdf.pages, start=1):
+                    # Data e hora do processamento por página
+                    page_processing_time = datetime.now().isoformat()
+
                     # Extrai o texto bruto sem imagens do PDF
                     text = page.extract_text() or ""
                     if not text.strip():
@@ -261,6 +264,11 @@ def extract_text_from_pdfs():
 
                     # Traduz o texto bruto para o inglês
                     translated_text = GoogleTranslator(source='auto', target='en').translate(text)
+
+                    # Verifica se o texto traduzido está vazio
+                    if not translated_text.strip():
+                        print(f"Texto traduzido vazio na página {page_number} do arquivo {file_name}. Ignorando.")
+                        continue
 
                     # Envia o texto traduzido para ser limpo
                     cleaned_text = clean_text(translated_text)
@@ -273,27 +281,39 @@ def extract_text_from_pdfs():
                     # Envia o texto limpo para a IA interpretar
                     summarized_text = summarize(cleaned_text)
                     if not summarized_text.strip():
-                        print(f"Resumo gerado na página {page_number} do arquivo {file_name} está vazio. Ignorando.")
+                        print(f"Resumo gerado vazio na página {page_number} do arquivo {file_name}. Ignorando.")
                         continue
 
                     # Envia o texto interpretado para a IA formatar para JSON
                     formatted_text = format_to_json(summarized_text)
 
+                    # Remove caracteres especiais indesejados e mantém apenas os válidos para JSON
+                    formatted_text = re.sub(r'[^a-zA-Z0-9,\[\]{}:\-\"\s_]', '', formatted_text)
+
                     # Usando expressão regular pra capturar tudo entre colchetes []
                     match = re.search(r'\[(.*)]$', formatted_text, re.DOTALL)
-                    if match:
-                        json_text = match.group(1)  # Pega o conteúdo do JSON sem os colchetes
-                    else:
-                        print(f"JSON válido não encontrado na página {page_number}. Ignorando.")
+                    if not match:
+                        print(f"JSON válido não encontrado na página {page_number} do arquivo {file_name}.")
+                        print(f"Texto retornado pela IA: {formatted_text}")
                         continue
+
+                    json_text = match.group(1)  # Pega o conteúdo do JSON sem os colchetes
 
                     try:
                         # Converte o texto JSON em um dicionário Python
                         json_dict = json.loads(f"[{json_text}]")  # Certifica que o texto seja interpretado como JSON válido
+
+                        # Adiciona os campos adicionais necessários
+                        for element in json_dict:
+                            element["metadata"]["id"] = str(uuid.uuid4())  # Gera um ID único
+                            element["metadata"]["source"]["file_name"] = file_name  # Adiciona o nome do arquivo
+                            element["metadata"]["source"]["page_number"] = page_number  # Adiciona o número da página
+                            element["metadata"]["created_at"] = page_processing_time  # Adiciona a data e hora por página
+
                         consolidated_data.extend(json_dict)  # Adiciona cada objeto à lista consolidada
                     except json.JSONDecodeError as e:
                         print(f"Erro ao decodificar JSON na página {page_number} do arquivo {file_name}: {e}")
-                        print(f"Texto recebido: {json_text}")
+                        print(f"Texto recebido pela IA: {json_text}")
 
     # Salva o JSON consolidado
     with open(consolidated_output, "w", encoding="utf-8") as consolidated_file:
