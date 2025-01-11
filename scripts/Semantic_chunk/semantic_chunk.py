@@ -279,9 +279,6 @@ def extract_text_from_pdfs():
                     # Envia o texto interpretado para a IA formatar para JSON
                     formatted_text = format_to_json(summarized_text)
 
-                    print(formatted_text)
-                    print()
-
                     # Usando expressão regular pra capturar tudo entre colchetes []
                     match = re.search(r'\[(.*)]$', formatted_text, re.DOTALL)
                     if match:
@@ -289,17 +286,12 @@ def extract_text_from_pdfs():
                     else:
                         print("JSON válido não encontrado.")
 
-                    print(json_text)
-                    print()
-
-
                     try:
-
                         # Adiciona ao consolidado
-                        consolidated_data.extend(formatted_text)
+                        consolidated_data.extend(json_text)
                     except json.JSONDecodeError as e:
                         print(f"Erro ao decodificar JSON na página {page_number} do arquivo {file_name}: {e}")
-                        print(f"Texto recebido: {formatted_text}")
+                        print(f"Texto recebido: {json_text}")
 
     # Salva o JSON consolidado
     with open(consolidated_output, "w", encoding="utf-8") as consolidated_file:
