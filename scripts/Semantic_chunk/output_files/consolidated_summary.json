@@ -1,79 +1,103 @@
 [
     {
         "metadata": {
-            "id": "e6387b02-4fef-4a9c-9790-f4508df945bb",
+            "id": "c84baa1f-0fe2-4df5-84b5-5dfe01ba0b17",
             "source": {
                 "file_name": "lubrificacao.pdf",
                 "page_number": 1
             },
-            "title": "Overview of Maintenance Personnel Certification Program CPM",
+            "title": "Understanding the CPM Program",
             "tags": [
-                "certification",
                 "maintenance",
-                "personnel"
+                "certification",
+                "program"
             ],
-            "created_at": "2025-01-11T12:46:14.092231"
+            "created_at": "2025-01-11T12:51:29.921760"
         },
         "content": {
-            "text": "The Maintenance Personnel Certification Program CPM is a comprehensive certification program designed to ensure that maintenance personnel possess the necessary skills and knowledge to perform their duties effectively This program is particularly relevant in industries where equipment reliability and safety are paramount, such as in the oil and gas sector The CPM certification program is a benchmark for maintenance personnel, demonstrating their expertise and commitment to excellence in their field",
-            "summary": "Introduces the Maintenance Personnel Certification Program CPM and its importance in industries where equipment reliability and safety are crucial"
+            "text": "The CPM Maintenance Personnel Certification Program is a comprehensive certification program designed for maintenance personnel, particularly mechanics This program aims to standardize the skills and knowledge of maintenance personnel, ensuring they meet the required standards for their roles The CPM program is a valuable tool for organizations seeking to improve their maintenance operations and ensure the reliability of their equipment",
+            "summary": "Introduces the CPM program, its purpose, and its benefits for organizations"
         },
         "context": {
             "preceding_text": "",
-            "following_text": "Mechanics play a vital role in the maintenance process"
+            "following_text": "Proper lubrication is a critical aspect of maintenance"
         }
     },
     {
         "metadata": {
-            "id": "753ce862-09e6-458d-aa36-b1f214b98143",
+            "id": "324c9472-c0b2-49df-84de-7bc5cec4ce7d",
             "source": {
                 "file_name": "lubrificacao.pdf",
                 "page_number": 1
             },
-            "title": "Importance of Mechanics in Maintenance",
+            "title": "Importance of Proper Lubrication",
+            "tags": [
+                "lubrication",
+                "efficiency",
+                "equipment"
+            ],
+            "created_at": "2025-01-11T12:51:29.921760"
+        },
+        "content": {
+            "text": "Proper lubrication is a critical aspect of maintenance, and it plays a vital role in the overall efficiency and longevity of equipment Lubrication helps to reduce friction between moving parts, preventing wear and tear, and reducing the risk of equipment failure Inadequate lubrication can lead to increased energy consumption, reduced equipment lifespan, and increased maintenance costs As a result, lubrication is a key focus area for the CPM program, with certified mechanics being trained to perform lubrication tasks effectively",
+            "summary": "Discusses the importance of proper lubrication in maintenance and its role in the CPM program"
+        },
+        "context": {
+            "preceding_text": "The CPM program is a valuable tool for organizations",
+            "following_text": "Mechanics are the backbone of any maintenance operation"
+        }
+    },
+    {
+        "metadata": {
+            "id": "c2973ef3-a274-4e2c-aec5-b4f5599db446",
+            "source": {
+                "file_name": "lubrificacao.pdf",
+                "page_number": 1
+            },
+            "title": "Mechanics Role in Maintenance",
             "tags": [
                 "mechanics",
                 "maintenance",
                 "equipment"
             ],
-            "created_at": "2025-01-11T12:46:14.092231"
+            "created_at": "2025-01-11T12:51:29.921760"
         },
         "content": {
-            "text": "Mechanics play a vital role in the maintenance process, as they are responsible for diagnosing and repairing equipment malfunctions Their expertise is essential in ensuring that equipment operates efficiently and safely Mechanics must possess a deep understanding of mechanical systems, including lubrication principles, to perform their duties effectively In industries where equipment downtime can result in significant losses, the skills of mechanics are crucial in minimizing downtime and maximizing productivity",
-            "summary": "Highlights the importance of mechanics in the maintenance process and their role in ensuring equipment efficiency and safety"
+            "text": "Mechanics are the backbone of any maintenance operation, and their role is critical in ensuring the reliability and efficiency of equipment As part of the CPM program, mechanics are trained to perform a range of tasks, including lubrication, inspection, and repair Certified mechanics possess the necessary skills and knowledge to diagnose and resolve equipment issues, reducing downtime and improving overall productivity By investing in the CPM program, organizations can ensure that their mechanics are equipped to perform their roles effectively, leading to improved maintenance outcomes",
+            "summary": "Explains the role of mechanics in maintenance and their training under the CPM program"
         },
         "context": {
-            "preceding_text": "The Maintenance Personnel Certification Program CPM is a comprehensive certification program",
-            "following_text": "Lubrication is a critical aspect of equipment maintenance"
+            "preceding_text": "Proper lubrication is a critical aspect of maintenance",
+            "following_text": "The CPM program offers numerous benefits to organizations"
         }
     },
     {
         "metadata": {
-            "id": "a8215ee8-89a5-4eae-9f75-1f34ff0802a9",
+            "id": "9c92f124-0474-40cd-9ed5-1b8f1b16f9dc",
             "source": {
                 "file_name": "lubrificacao.pdf",
                 "page_number": 1
             },
-            "title": "Lubrication Principles and Practices",
+            "title": "Benefits of the CPM Program",
             "tags": [
-                "lubrication",
-                "equipment",
-                "maintenance"
+                "benefits",
+                "efficiency",
+                "productivity"
             ],
-            "created_at": "2025-01-11T12:46:14.092231"
+            "created_at": "2025-01-11T12:51:29.921760"
         },
         "content": {
-            "text": "Lubrication is a critical aspect of equipment maintenance, as it helps to reduce friction, prevent wear and tear, and promote smooth operation Lubrication principles and practices are essential for mechanics to understand, as they must select the appropriate lubricant for a given application and apply it correctly to ensure optimal equipment performance Effective lubrication practices can help to extend equipment lifespan, reduce maintenance costs, and improve overall equipment reliability",
-            "summary": "Explains the importance of lubrication in equipment maintenance and its role in promoting smooth operation and extending equipment lifespan"
+            "text": "The CPM program offers numerous benefits to organizations, including improved maintenance efficiency, reduced equipment downtime, and increased productivity By standardizing the skills and knowledge of maintenance personnel, the CPM program helps to ensure that equipment is properly maintained, reducing the risk of failure and improving overall reliability Additionally, the CPM program provides a framework for continuous improvement, enabling organizations to refine their maintenance operations and achieve better outcomes",
+            "summary": "Highlights the benefits of the CPM program for organizations, including improved efficiency and productivity"
         },
         "context": {
-            "preceding_text": "Mechanics play a vital role in the maintenance process",
+            "preceding_text": "By investing in the CPM program, organizations can ensure",
             "following_text": ""
         }
     },
     {
         "metadata": {
-            "id": "8902644b-fa1e-4cef-b545-2dd389a7d680",
+            "id": "f9b603ac-d76b-4c09-837a-3bf0c207feef",
             "source": {
                 "file_name": "lubrificacao.pdf",
                 "page_number": 2
@@ -81,71 +105,119 @@
             "title": "Introduction to the Document",
             "tags": [
                 "document",
-                "lubrication",
-                "mechanics"
+                "manual",
+                "guide"
             ],
-            "created_at": "2025-01-11T12:46:19.832282"
+            "created_at": "2025-01-11T12:51:36.947344"
         },
         "content": {
-            "text": "The provided content appears to be a technical document related to lubrication in mechanics, specifically developed in partnership between SENAI National Service for Industrial Training and CST Tubaro Steel Company The document was published in 1997 and is a result of collaborative work between the two organizations",
-            "summary": "Introduces the document and its background information"
+            "text": "The provided content appears to be a technical manual or guide related to lubrication in mechanics, specifically developed for the Tubaro Steel Company CST in partnership with SENAI - ES National Service for Industrial Training The document was created in 1997 and involves a collaborative effort from various individuals and organizations",
+            "summary": "Introduces the document, its purpose, and its development history"
         },
         "context": {
             "preceding_text": "",
-            "following_text": "The document is structured with a clear hierarchy of authorship"
+            "following_text": "Lubrication plays a crucial role in mechanics"
         }
     },
     {
         "metadata": {
-            "id": "3f3e1ce1-af3e-4fef-874a-774c3d9fd069",
+            "id": "955dba19-8e05-4a27-8106-addf33535c3d",
             "source": {
                 "file_name": "lubrificacao.pdf",
                 "page_number": 2
             },
-            "title": "Document Structure and Authorship",
+            "title": "Lubrication in Mechanics",
             "tags": [
-                "authorship",
-                "coordination",
-                "supervision"
+                "mechanics",
+                "lubrication",
+                "friction"
             ],
-            "created_at": "2025-01-11T12:46:19.832282"
+            "created_at": "2025-01-11T12:51:36.947344"
         },
         "content": {
-            "text": "The document is structured with a clear hierarchy of authorship, starting with the general coordination by Lus Cludio Magnago Andrade SENAI and Marcos Drews Morgado Horta CST The supervision team consisted of Alberto Farias Gavini Filho SENAI and Rosalvo Marcos Trazzi CST The preparation team included Evandro Armini de Pauli SENAI, Fernando Saulo Uliana SENAI, and others The approval process involved multiple individuals from CST, including Jos Geraldo de Carvalho, Jos Ramon Martinez Pontes, Tarcilio Deorce da Rocha, Wenceslau de Oliveira, and others",
-            "summary": "Describes the documents structure and authorship hierarchy"
+            "text": "Lubrication plays a crucial role in mechanics, serving as a vital component in the operation and maintenance of machinery It reduces friction between moving parts, prevents wear and tear, and helps to dissipate heat Effective lubrication can significantly improve the efficiency and lifespan of mechanical systems, making it an essential aspect of industrial maintenance",
+            "summary": "Explains the role of lubrication in mechanics and its benefits"
         },
         "context": {
-            "preceding_text": "The provided content appears to be a technical document related to lubrication in mechanics",
-            "following_text": "The document provides organizational information about SENAI and CST"
+            "preceding_text": "The provided content appears to be a technical manual",
+            "following_text": "The importance of lubrication cannot be overstated"
         }
     },
     {
         "metadata": {
-            "id": "a7e1eea6-fd25-4fd7-8ee4-5d4becb17ef8",
+            "id": "20507905-d522-4639-909b-c38b6e4c56ac",
             "source": {
                 "file_name": "lubrificacao.pdf",
                 "page_number": 2
             },
-            "title": "Organizational Information",
+            "title": "Importance of Lubrication",
             "tags": [
-                "organization",
-                "address",
-                "contact"
+                "importance",
+                "performance",
+                "reliability"
             ],
-            "created_at": "2025-01-11T12:46:19.832282"
+            "created_at": "2025-01-11T12:51:36.947344"
         },
         "content": {
-            "text": "The document provides organizational information about SENAI and CST, including their addresses, phone numbers, and fax numbers SENAI is located at Our Lady of Penha Ave, 2053 - Vitria - ES, with a zip code of 29045-401 and a post office box number of 683 CST is located at Brigadeiro Eduardo Gomes Ave, No 930, Jardim Limoeiro - Serra - ES, with a zip code of 29163-970 The phone numbers for SENAI and CST are 27 3325-0255 and 27 3348-1333, respectively The fax number for SENAI is 27 3227-9017",
-            "summary": "Provides contact information for SENAI and CST"
+            "text": "The importance of lubrication cannot be overstated, as it directly impacts the performance and reliability of mechanical equipment Proper lubrication can help to prevent equipment failure, reduce downtime, and minimize maintenance costs In addition, lubrication can also contribute to improved safety by reducing the risk of accidents and injuries caused by equipment malfunction",
+            "summary": "Highlights the importance of lubrication in ensuring equipment performance and reliability"
         },
         "context": {
-            "preceding_text": "The document is structured with a clear hierarchy of authorship",
+            "preceding_text": "Lubrication plays a crucial role in mechanics",
+            "following_text": "A lubrication system typically consists of various components"
+        }
+    },
+    {
+        "metadata": {
+            "id": "aa18192a-9ca0-4a60-9c2f-e4aef787cdc8",
+            "source": {
+                "file_name": "lubrificacao.pdf",
+                "page_number": 2
+            },
+            "title": "Lubrication Systems",
+            "tags": [
+                "systems",
+                "components",
+                "maintenance"
+            ],
+            "created_at": "2025-01-11T12:51:36.947344"
+        },
+        "content": {
+            "text": "A lubrication system typically consists of various components, including lubricants, pumps, filters, and reservoirs The system is designed to circulate lubricants throughout the mechanical system, ensuring that all moving parts are properly lubricated Effective lubrication systems require regular maintenance, including filter changes, lubricant top-offs, and system inspections",
+            "summary": "Describes the components and maintenance requirements of lubrication systems"
+        },
+        "context": {
+            "preceding_text": "The importance of lubrication cannot be overstated",
+            "following_text": "To ensure optimal lubrication, it is essential to follow best practices"
+        }
+    },
+    {
+        "metadata": {
+            "id": "a73d4a1f-7301-4378-ba94-15d611081b01",
+            "source": {
+                "file_name": "lubrificacao.pdf",
+                "page_number": 2
+            },
+            "title": "Best Practices for Lubrication",
+            "tags": [
+                "best",
+                "practices",
+                "maintenance"
+            ],
+            "created_at": "2025-01-11T12:51:36.947344"
+        },
+        "content": {
+            "text": "To ensure optimal lubrication, it is essential to follow best practices, including regular maintenance, proper lubricant selection, and accurate lubricant application Additionally, lubrication systems should be designed and installed to meet the specific needs of the mechanical system, taking into account factors such as temperature, pressure, and load By following these best practices, organizations can maximize the benefits of lubrication and minimize the risks associated with equipment failure",
+            "summary": "Outlines the best practices for lubrication to ensure optimal performance and safety"
+        },
+        "context": {
+            "preceding_text": "A lubrication system typically consists of various components",
             "following_text": ""
         }
     },
     {
         "metadata": {
-            "id": "9dfda63f-6d31-4716-a9fb-c3401028b69f",
+            "id": "dee7e264-d8c3-494a-85d5-09978eaad4c7",
             "source": {
                 "file_name": "lubrificacao.pdf",
                 "page_number": 3
@@ -154,22 +226,22 @@
             "tags": [
                 "lubrication",
                 "methods",
-                "equipment"
+                "machinery"
             ],
-            "created_at": "2025-01-11T12:46:26.136256"
+            "created_at": "2025-01-11T12:51:46.919122"
         },
         "content": {
-            "text": "Lubrication is a crucial process in maintaining the health and efficiency of equipment There are several methods of applying lubricating oils, each with its own advantages and applications The primary methods include gravity lubrication, capillary lubrication, splash lubrication, immersion lubrication, forced system lubrication, and grease lubrication",
-            "summary": "Explains the importance of lubrication and its various methods"
+            "text": "Lubrication is a crucial process in maintaining the health and efficiency of machinery There are various methods of applying lubricating oils, each with its own advantages and applications The primary methods include gravity lubrication, capillary lubrication, splash lubrication, immersion lubrication, forced system lubrication, and grease lubrication",
+            "summary": "Explains the importance and various methods of lubrication in machinery"
         },
         "context": {
             "preceding_text": "",
-            "following_text": "Gravity lubrication methods rely on the natural flow of lubricating oil"
+            "following_text": "Gravity lubrication involves the use of gravity to feed lubricating oil to the moving parts of a machine"
         }
     },
     {
         "metadata": {
-            "id": "390e19f7-ec5f-4373-91a4-0c8b06c3a496",
+            "id": "c7f7fb10-c0d7-46df-9e59-51f11be4f7ce",
             "source": {
                 "file_name": "lubrificacao.pdf",
                 "page_number": 3
@@ -180,20 +252,20 @@
                 "lubrication",
                 "methods"
             ],
-            "created_at": "2025-01-11T12:46:26.136256"
+            "created_at": "2025-01-11T12:51:46.919122"
         },
         "content": {
-            "text": "Gravity lubrication methods rely on the natural flow of lubricating oil to reach the moving parts of equipment This method is simple and cost-effective but may not be suitable for high-temperature or high-load applications",
+            "text": "Gravity lubrication involves the use of gravity to feed lubricating oil to the moving parts of a machine This method is simple and cost-effective but may not be suitable for high-speed or high-load applications",
             "summary": "Describes the gravity lubrication method and its limitations"
         },
         "context": {
-            "preceding_text": "Lubrication is a crucial process in maintaining the health and efficiency of equipment",
-            "following_text": "Capillary lubrication methods involve the use of a wick or capillary tube"
+            "preceding_text": "Lubrication is a crucial process in maintaining the health and efficiency of machinery",
+            "following_text": "Capillary lubrication uses a wick or a porous material to draw lubricating oil to the moving parts of a machine"
         }
     },
     {
         "metadata": {
-            "id": "0ee0d62a-b55c-4d10-a29a-e6ad31134906",
+            "id": "ffe97c08-82ca-40d9-b302-814df7963469",
             "source": {
                 "file_name": "lubrificacao.pdf",
                 "page_number": 3
@@ -204,20 +276,20 @@
                 "lubrication",
                 "methods"
             ],
-            "created_at": "2025-01-11T12:46:26.136256"
+            "created_at": "2025-01-11T12:51:46.919122"
         },
         "content": {
-            "text": "Capillary lubrication methods involve the use of a wick or capillary tube to draw lubricating oil to the moving parts of equipment This method is often used in applications where gravity lubrication is not sufficient",
+            "text": "Capillary lubrication uses a wick or a porous material to draw lubricating oil to the moving parts of a machine This method is often used in applications where a small amount of lubricant is required",
             "summary": "Explains the capillary lubrication method and its applications"
         },
         "context": {
-            "preceding_text": "Gravity lubrication methods rely on the natural flow of lubricating oil",
-            "following_text": "Splash lubrication methods involve the use of a splash or spray"
+            "preceding_text": "Gravity lubrication involves the use of gravity to feed lubricating oil to the moving parts of a machine",
+            "following_text": "Splash lubrication involves the use of a splash pan or a reservoir to feed lubricating oil to the moving parts of a machine"
         }
     },
     {
         "metadata": {
-            "id": "7c40a675-5cde-43ca-9b10-f1674a058164",
+            "id": "01f38cd1-ec6f-4d0f-a436-c2dbe1223a31",
             "source": {
                 "file_name": "lubrificacao.pdf",
                 "page_number": 3
@@ -228,20 +300,20 @@
                 "lubrication",
                 "methods"
             ],
-            "created_at": "2025-01-11T12:46:26.136256"
+            "created_at": "2025-01-11T12:51:46.919122"
         },
         "content": {
-            "text": "Splash lubrication methods involve the use of a splash or spray of lubricating oil to lubricate moving parts This method is often used in applications where the equipment is subject to high temperatures or loads",
+            "text": "Splash lubrication involves the use of a splash pan or a reservoir to feed lubricating oil to the moving parts of a machine This method is commonly used in applications where a large amount of lubricant is required",
             "summary": "Describes the splash lubrication method and its applications"
         },
         "context": {
-            "preceding_text": "Capillary lubrication methods involve the use of a wick or capillary tube",
-            "following_text": "Immersion lubrication methods involve the complete submersion"
+            "preceding_text": "Capillary lubrication uses a wick or a porous material to draw lubricating oil to the moving parts of a machine",
+            "following_text": "Immersion lubrication involves the complete submersion of the moving parts of a machine in a lubricating oil bath"
         }
     },
     {
         "metadata": {
-            "id": "cb7fa63f-4314-4628-8def-bb13b55de617",
+            "id": "629aba9e-a351-4948-82d8-514c5ca69662",
             "source": {
                 "file_name": "lubrificacao.pdf",
                 "page_number": 3
@@ -252,20 +324,20 @@
                 "lubrication",
                 "methods"
             ],
-            "created_at": "2025-01-11T12:46:26.136256"
+            "created_at": "2025-01-11T12:51:46.919122"
         },
         "content": {
-            "text": "Immersion lubrication methods involve the complete submersion of moving parts in a bath of lubricating oil This method is often used in applications where high levels of lubrication are required",
+            "text": "Immersion lubrication involves the complete submersion of the moving parts of a machine in a lubricating oil bath This method is often used in applications where high loads and high speeds are involved",
             "summary": "Explains the immersion lubrication method and its applications"
         },
         "context": {
-            "preceding_text": "Splash lubrication methods involve the use of a splash or spray",
-            "following_text": "Forced system lubrication methods involve the use of a pump"
+            "preceding_text": "Splash lubrication involves the use of a splash pan or a reservoir to feed lubricating oil to the moving parts of a machine",
+            "following_text": "Forced system lubrication involves the use of a pump or a compressor to force lubricating oil to the moving parts of a machine"
         }
     },
     {
         "metadata": {
-            "id": "1b584ce1-1f63-4486-b9e0-b7bbfbfb8049",
+            "id": "f53e4e80-c6bc-4b84-94c4-4602b2901ac6",
             "source": {
                 "file_name": "lubrificacao.pdf",
                 "page_number": 3
@@ -276,20 +348,20 @@
                 "system",
                 "lubrication"
             ],
-            "created_at": "2025-01-11T12:46:26.136256"
+            "created_at": "2025-01-11T12:51:46.919122"
         },
         "content": {
-            "text": "Forced system lubrication methods involve the use of a pump or other device to force lubricating oil to the moving parts of equipment This method is often used in applications where high pressures or temperatures are involved",
+            "text": "Forced system lubrication involves the use of a pump or a compressor to force lubricating oil to the moving parts of a machine This method is commonly used in applications where high pressures and high speeds are involved",
             "summary": "Describes the forced system lubrication method and its applications"
         },
         "context": {
-            "preceding_text": "Immersion lubrication methods involve the complete submersion",
-            "following_text": "Grease lubrication methods involve the use of a thick"
+            "preceding_text": "Immersion lubrication involves the complete submersion of the moving parts of a machine in a lubricating oil bath",
+            "following_text": "Grease lubrication involves the use of a thick, semi-solid lubricant to reduce friction and wear on moving parts"
         }
     },
     {
         "metadata": {
-            "id": "219d3a97-43fb-4a58-9c68-9c607d25ab89",
+            "id": "af81687c-3544-4add-9ff5-fe6911b2e830",
             "source": {
                 "file_name": "lubrificacao.pdf",
                 "page_number": 3
@@ -300,20 +372,20 @@
                 "lubrication",
                 "methods"
             ],
-            "created_at": "2025-01-11T12:46:26.136256"
+            "created_at": "2025-01-11T12:51:46.919122"
         },
         "content": {
-            "text": "Grease lubrication methods involve the use of a thick, paste-like lubricant to lubricate moving parts This method is often used in applications where high levels of lubrication are required, but the equipment is subject to low temperatures or loads",
+            "text": "Grease lubrication involves the use of a thick, semi-solid lubricant to reduce friction and wear on moving parts This method is often used in applications where a small amount of lubricant is required and high pressures are involved",
             "summary": "Explains the grease lubrication method and its applications"
         },
         "context": {
-            "preceding_text": "Forced system lubrication methods involve the use of a pump",
-            "following_text": "When applying lubricants, it is essential to take precautions"
+            "preceding_text": "Forced system lubrication involves the use of a pump or a compressor to force lubricating oil to the moving parts of a machine",
+            "following_text": "When applying lubricants, it is essential to follow certain precautions to ensure the safety and efficiency of the machine"
         }
     },
     {
         "metadata": {
-            "id": "656d62ca-8df2-4e47-9663-e28efebd7a31",
+            "id": "f41b6887-476f-4a66-a1ad-e0e29be6dbe4",
             "source": {
                 "file_name": "lubrificacao.pdf",
                 "page_number": 3
@@ -324,20 +396,20 @@
                 "lubricants",
                 "application"
             ],
-            "created_at": "2025-01-11T12:46:26.136256"
+            "created_at": "2025-01-11T12:51:46.919122"
         },
         "content": {
-            "text": "When applying lubricants, it is essential to take precautions to ensure safe and effective lubrication This includes ensuring the correct type and amount of lubricant is used, following proper application procedures, and taking steps to prevent contamination and spills",
-            "summary": "Discusses the importance of taking precautions when applying lubricants"
+            "text": "When applying lubricants, it is essential to follow certain precautions to ensure the safety and efficiency of the machine These precautions include ensuring the correct type and amount of lubricant is used, avoiding over-lubrication, and following the manufacturers instructions",
+            "summary": "Discusses the importance of precautions when applying lubricants"
         },
         "context": {
-            "preceding_text": "Grease lubrication methods involve the use of a thick",
-            "following_text": "Lubrication accessories, such as pumps, filters, and reservoirs"
+            "preceding_text": "Grease lubrication involves the use of a thick, semi-solid lubricant to reduce friction and wear on moving parts",
+            "following_text": "Lubrication accessories, such as lubricant reservoirs, pumps, and filters, play a crucial role in maintaining the health and efficiency of machinery"
         }
     },
     {
         "metadata": {
-            "id": "b4c39d81-7dc6-4ce9-a80e-fa99e5de5a11",
+            "id": "eb8d5c5a-8599-409d-af09-37efd3b0a0a2",
             "source": {
                 "file_name": "lubrificacao.pdf",
                 "page_number": 3
@@ -346,22 +418,22 @@
             "tags": [
                 "lubrication",
                 "accessories",
-                "equipment"
+                "machinery"
             ],
-            "created_at": "2025-01-11T12:46:26.136256"
+            "created_at": "2025-01-11T12:51:46.919122"
         },
         "content": {
-            "text": "Lubrication accessories, such as pumps, filters, and reservoirs, play a critical role in ensuring the effective lubrication of equipment These accessories help to maintain the quality and quantity of lubricating oil, ensuring that equipment operates efficiently and safely",
-            "summary": "Explains the importance of lubrication accessories in equipment maintenance"
+            "text": "Lubrication accessories, such as lubricant reservoirs, pumps, and filters, play a crucial role in maintaining the health and efficiency of machinery These accessories help to ensure that the correct amount and type of lubricant is delivered to the moving parts of the machine",
+            "summary": "Explains the importance of lubrication accessories in maintaining machinery health"
         },
         "context": {
-            "preceding_text": "When applying lubricants, it is essential to take precautions",
-            "following_text": "Lubricating oils have several key properties that make"
+            "preceding_text": "When applying lubricants, it is essential to follow certain precautions to ensure the safety and efficiency of the machine",
+            "following_text": "Lubricating oils have various properties that make them suitable for different applications"
         }
     },
     {
         "metadata": {
-            "id": "9644a113-8f3c-402a-8a99-9d9a707ba754",
+            "id": "884452dc-5239-4d8f-9340-034133883790",
             "source": {
                 "file_name": "lubrificacao.pdf",
                 "page_number": 3
@@ -372,20 +444,20 @@
                 "oils",
                 "properties"
             ],
-            "created_at": "2025-01-11T12:46:26.136256"
+            "created_at": "2025-01-11T12:51:46.919122"
         },
         "content": {
-            "text": "Lubricating oils have several key properties that make them suitable for use in various applications These properties include viscosity, lubricity, and thermal stability Understanding these properties is essential for selecting the correct lubricating oil for a particular application",
-            "summary": "Discusses the key properties of lubricating oils and their importance"
+            "text": "Lubricating oils have various properties that make them suitable for different applications These properties include viscosity, density, and flash point Understanding these properties is essential in selecting the correct lubricant for a particular application",
+            "summary": "Discusses the properties of lubricating oils and their importance in selecting the correct lubricant"
         },
         "context": {
-            "preceding_text": "Lubrication accessories, such as pumps, filters, and reservoirs",
-            "following_text": "Proper receiving and storage of lubricating oils are"
+            "preceding_text": "Lubrication accessories, such as lubricant reservoirs, pumps, and filters, play a crucial role in maintaining the health and efficiency of machinery",
+            "following_text": "Receiving and storing lubricating oils is a critical process that requires careful planning and execution"
         }
     },
     {
         "metadata": {
-            "id": "fad1dee1-fd7a-4fa5-94f1-fbd3a1548844",
+            "id": "52c6ce97-08e1-4f69-add0-7448c377866d",
             "source": {
                 "file_name": "lubrificacao.pdf",
                 "page_number": 3
@@ -394,22 +466,23 @@
             "tags": [
                 "receiving",
                 "storage",
-                "lubricating"
+                "lubricating",
+                "oils"
             ],
-            "created_at": "2025-01-11T12:46:26.136256"
+            "created_at": "2025-01-11T12:51:46.919122"
         },
         "content": {
-            "text": "Proper receiving and storage of lubricating oils are critical to maintaining their quality and extending their lifespan This includes ensuring the correct storage containers are used, following proper handling and storage procedures, and taking steps to prevent contamination and spills",
-            "summary": "Explains the importance of proper receiving and storage of lubricating oils"
+            "text": "Receiving and storing lubricating oils is a critical process that requires careful planning and execution This includes ensuring the correct type and amount of lubricant is received, storing it in a clean and dry environment, and following the manufacturers instructions for handling and disposal",
+            "summary": "Discusses the importance of proper receiving and storage of lubricating oils"
         },
         "context": {
-            "preceding_text": "Lubricating oils have several key properties that make",
-            "following_text": "Several factors can affect the quality and quantity"
+            "preceding_text": "Lubricating oils have various properties that make them suitable for different applications",
+            "following_text": "Several factors can affect the quality and performance of stored lubricating oils"
         }
     },
     {
         "metadata": {
-            "id": "c8bc397a-94ee-4144-846f-068d85570bd8",
+            "id": "63b5b87c-4ee8-42b2-87a9-eec9c6ba91c4",
             "source": {
                 "file_name": "lubrificacao.pdf",
                 "page_number": 3
@@ -418,22 +491,24 @@
             "tags": [
                 "factors",
                 "stored",
-                "products"
+                "products",
+                "lubricating",
+                "oils"
             ],
-            "created_at": "2025-01-11T12:46:26.136256"
+            "created_at": "2025-01-11T12:51:46.919122"
         },
         "content": {
-            "text": "Several factors can affect the quality and quantity of stored lubricating oils, including contamination, storage conditions, and handling practices Understanding these factors is essential for maintaining the quality and effectiveness of lubricating oils",
-            "summary": "Discusses the factors that can affect the quality and quantity of stored lubricating oils"
+            "text": "Several factors can affect the quality and performance of stored lubricating oils These factors include contamination, storage conditions, and handling practices",
+            "summary": "Discusses the factors that can affect the quality and performance of stored lubricating oils"
         },
         "context": {
-            "preceding_text": "Proper receiving and storage of lubricating oils are",
-            "following_text": "Regular analysis of lubricating oils can provide"
+            "preceding_text": "Receiving and storing lubricating oils is a critical process that requires careful planning and execution",
+            "following_text": "Regular lubricant analysis is essential in monitoring the condition of equipment and preventing premature wear and tear"
         }
     },
     {
         "metadata": {
-            "id": "b3cf1dde-ca65-493b-91d6-b0e9e4a9db39",
+            "id": "feddd7e6-7a08-4893-9f61-dae96a67f7e6",
             "source": {
                 "file_name": "lubrificacao.pdf",
                 "page_number": 3
@@ -442,46 +517,48 @@
             "tags": [
                 "monitoring",
                 "equipment",
-                "lubricant"
+                "condition",
+                "lubricant",
+                "analysis"
             ],
-            "created_at": "2025-01-11T12:46:26.136256"
+            "created_at": "2025-01-11T12:51:46.919122"
         },
         "content": {
-            "text": "Regular analysis of lubricating oils can provide valuable insights into the condition of equipment This includes monitoring for signs of wear, contamination, and other issues that can affect equipment performance and lifespan",
+            "text": "Regular lubricant analysis is essential in monitoring the condition of equipment and preventing premature wear and tear This involves analyzing the lubricant for signs of contamination, degradation, and wear metal",
             "summary": "Explains the importance of regular lubricant analysis in monitoring equipment condition"
         },
         "context": {
-            "preceding_text": "Several factors can affect the quality and quantity",
-            "following_text": "Regular lubrication assessments are essential for ensuring"
+            "preceding_text": "Several factors can affect the quality and performance of stored lubricating oils",
+            "following_text": "Lubrication assessment involves evaluating the effectiveness of a lubrication system and identifying areas for improvement"
         }
     },
     {
         "metadata": {
-            "id": "031668db-48a7-4ac0-9289-02cbab0e1f7d",
+            "id": "7933a314-6cb5-418c-885a-84ca1cb6aa1f",
             "source": {
                 "file_name": "lubrificacao.pdf",
                 "page_number": 3
             },
-            "title": "Lubrication Assessment",
+            "title": "Lubrication - Assessment",
             "tags": [
                 "lubrication",
                 "assessment",
-                "equipment"
+                "evaluation"
             ],
-            "created_at": "2025-01-11T12:46:26.136256"
+            "created_at": "2025-01-11T12:51:46.919122"
         },
         "content": {
-            "text": "Regular lubrication assessments are essential for ensuring the effective lubrication of equipment This includes evaluating the condition of lubricating oils, monitoring equipment performance, and identifying areas for improvement",
-            "summary": "Discusses the importance of regular lubrication assessments in equipment maintenance"
+            "text": "Lubrication assessment involves evaluating the effectiveness of a lubrication system and identifying areas for improvement This includes analyzing the lubricant, the equipment, and the operating conditions to determine the root cause of any problems and recommend corrective actions",
+            "summary": "Discusses the importance of lubrication assessment in evaluating the effectiveness of a lubrication system"
         },
         "context": {
-            "preceding_text": "Regular analysis of lubricating oils can provide",
+            "preceding_text": "Regular lubricant analysis is essential in monitoring the condition of equipment and preventing premature wear and tear",
             "following_text": ""
         }
     },
     {
         "metadata": {
-            "id": "5be3bb28-9ce7-400e-a0c3-721733a14119",
+            "id": "4208542b-f01e-4366-ab1f-d35240143b90",
             "source": {
                 "file_name": "lubrificacao.pdf",
                 "page_number": 4
@@ -492,20 +569,20 @@
                 "lubrication",
                 "mechanical"
             ],
-            "created_at": "2025-01-11T12:46:35.670281"
+            "created_at": "2025-01-11T12:51:55.818363"
         },
         "content": {
-            "text": "Friction is a fundamental concept in the study of lubrication It refers to the force that opposes motion between two surfaces in contact In mechanical systems, friction can lead to wear and tear, heat generation, and energy loss To mitigate these effects, lubricants are used to reduce friction and prevent damage to moving parts",
-            "summary": "Explains the concept of friction and its relation to lubrication in mechanical systems"
+            "text": "Friction is a fundamental concept in the study of lubrication It refers to the force that opposes motion between two surfaces in contact In mechanical systems, friction can lead to wear and tear, heat generation, and energy loss Lubrication is a technique used to reduce friction and prevent damage to moving parts By introducing a lubricant between the surfaces, friction is minimized, and the systems efficiency and lifespan are improved",
+            "summary": "Explains the concept of friction and lubrication, their relationship, and the benefits of lubrication"
         },
         "context": {
             "preceding_text": "",
-            "following_text": "Lubricants play a crucial role in reducing friction and preventing wear on mechanical components"
+            "following_text": "Lubricants play a crucial role in reducing friction and preventing wear"
         }
     },
     {
         "metadata": {
-            "id": "29729b5a-439d-4a99-9a9a-4e3444955d06",
+            "id": "d0851821-b2bf-458a-b0d8-6015b881abee",
             "source": {
                 "file_name": "lubrificacao.pdf",
                 "page_number": 4
@@ -516,20 +593,20 @@
                 "functions",
                 "mechanical"
             ],
-            "created_at": "2025-01-11T12:46:35.670281"
+            "created_at": "2025-01-11T12:51:55.818363"
         },
         "content": {
-            "text": "Lubricants play a crucial role in reducing friction and preventing wear on mechanical components They perform several key functions, including:n- Reducing friction between moving partsn- Preventing wear and tear on surfacesn- Cooling and cleaning surfacesn- Sealing gaps and preventing leakagen- Protecting against corrosion and rust",
-            "summary": "Lists the key functions of lubricants in mechanical systems"
+            "text": "Lubricants play a crucial role in reducing friction and preventing wear They perform several key functions, including:n- Reducing friction between moving partsn- Preventing wear and tear on surfacesn- Cooling and cleaning the systemn- Sealing and protecting the system from contaminants",
+            "summary": "Lists the key functions of lubricants in reducing friction and preventing wear"
         },
         "context": {
             "preceding_text": "Understanding Friction and Lubrication",
-            "following_text": "A lubricant film is a thin layer of lubricant that forms between two surfaces in contact"
+            "following_text": "A lubricant film is a thin layer of lubricant that forms between the surfaces in contact"
         }
     },
     {
         "metadata": {
-            "id": "9724777b-9cd6-45c4-bac4-6d12ec7c2d7d",
+            "id": "f3fe59db-b223-456a-afe5-6216f0f751b5",
             "source": {
                 "file_name": "lubrificacao.pdf",
                 "page_number": 4
@@ -540,20 +617,20 @@
                 "film",
                 "classification"
             ],
-            "created_at": "2025-01-11T12:46:35.670281"
+            "created_at": "2025-01-11T12:51:55.818363"
         },
         "content": {
-            "text": "A lubricant film is a thin layer of lubricant that forms between two surfaces in contact It reduces friction and prevents wear by creating a barrier between the surfaces Lubrication can be classified into several types, including:n- Hydrodynamic lubrication: uses a thick lubricant film to separate surfacesn- Elastohydrodynamic lubrication: uses a combination of lubricant film and elastic deformation to separate surfacesn- Boundary lubrication: uses a thin lubricant film to separate surfaces",
-            "summary": "Describes the concept of a lubricant film and its role in lubrication classification"
+            "text": "A lubricant film is a thin layer of lubricant that forms between the surfaces in contact It is essential for reducing friction and preventing wear Lubrication can be classified into several types, including:n- Hydrodynamic lubrication: uses a lubricant film to separate the surfacesn- Elastohydrodynamic lubrication: uses a combination of lubricant film and elastic deformation to separate the surfacesn- Boundary lubrication: uses a thin lubricant film to separate the surfaces",
+            "summary": "Explains the concept of a lubricant film and the different types of lubrication"
         },
         "context": {
             "preceding_text": "Functions of Lubricants",
-            "following_text": "Lubricants can be classified based on their composition, properties, and applications"
+            "following_text": "Lubricants can be classified based on their properties and applications"
         }
     },
     {
         "metadata": {
-            "id": "92649330-8efe-40ec-96fd-87f6727f49d9",
+            "id": "872eed15-7c73-4ae1-b10c-169a6adbed51",
             "source": {
                 "file_name": "lubrificacao.pdf",
                 "page_number": 4
@@ -564,11 +641,11 @@
                 "classification",
                 "analysis"
             ],
-            "created_at": "2025-01-11T12:46:35.670281"
+            "created_at": "2025-01-11T12:51:55.818363"
         },
         "content": {
-            "text": "Lubricants can be classified based on their composition, properties, and applications Common types of lubricants include:n- Mineral oilsn- Synthetic oilsn- Semi-synthetic oilsn- Greasesn- Bio-based lubricantsnAnalysis of lubricants involves evaluating their physical and chemical properties, such as viscosity, density, and flash point This information is used to determine the suitability of a lubricant for a particular application",
-            "summary": "Explains the classification and analysis of lubricants based on their composition and properties"
+            "text": "Lubricants can be classified based on their properties and applications Common types of lubricants include:n- Mineral oilsn- Synthetic oilsn- Semi-synthetic oilsn- GreasesnLubricant analysis involves evaluating the lubricants properties, such as viscosity, density, and additives This information is used to select the appropriate lubricant for a particular application",
+            "summary": "Describes the classification of lubricants based on their properties and applications, and the importance of lubricant analysis"
         },
         "context": {
             "preceding_text": "Lubricant Film and Lubrication Classification",
@@ -577,31 +654,31 @@
     },
     {
         "metadata": {
-            "id": "85457b9d-65a3-426f-a2ec-b78aa0bceed4",
+            "id": "67f170a1-acbd-4731-af81-559a40a731c2",
             "source": {
                 "file_name": "lubrificacao.pdf",
                 "page_number": 4
             },
             "title": "Lubricating Greases",
             "tags": [
-                "lubricating",
                 "greases",
-                "semi-solid"
+                "lubricating",
+                "mechanical"
             ],
-            "created_at": "2025-01-11T12:46:35.670281"
+            "created_at": "2025-01-11T12:51:55.818363"
         },
         "content": {
-            "text": "Lubricating greases are semi-solid lubricants that consist of a thickener and a lubricating oil They are used in applications where a lubricant film is required, but a liquid lubricant is not suitable Greases can be classified based on their type of thickener, such as:n- Soap-based greasesn- Synthetic greasesn- Polyurea greasesnCharacteristics and applications of lubricating greases include:n- High viscosity indexn- Good thermal stabilityn- Resistance to water and corrosionn- Suitable for high-temperature applications",
-            "summary": "Describes the characteristics and applications of lubricating greases"
+            "text": "Lubricating greases are semi-solid lubricants that consist of a thickener and a lubricating oil They are commonly used in applications where a lubricant film is not sufficient to reduce friction Greases can be classified based on their type of thickener, such as:n- Soap-based greasesn- Silica-based greasesn- Calcium-based greases",
+            "summary": "Explains the concept of lubricating greases, their composition, and classification"
         },
         "context": {
             "preceding_text": "Lubricant Classification and Analysis",
-            "following_text": "Additives are chemicals that are added to lubricants to enhance their performance and properties"
+            "following_text": "Additives are chemicals added to lubricants to enhance their performance"
         }
     },
     {
         "metadata": {
-            "id": "75619ea9-41c5-4dc0-b4ba-4b89647573e7",
+            "id": "cfa916d6-478e-4b25-a028-bb735bddaccb",
             "source": {
                 "file_name": "lubrificacao.pdf",
                 "page_number": 4
@@ -612,11 +689,11 @@
                 "selection",
                 "criteria"
             ],
-            "created_at": "2025-01-11T12:46:35.670281"
+            "created_at": "2025-01-11T12:51:55.818363"
         },
         "content": {
-            "text": "Additives are chemicals that are added to lubricants to enhance their performance and properties Common additives include:n- Detergentsn- Dispersantsn- Anti-wear agentsn- Anti-foaming agentsnSelection criteria for lubricants include:n- Operating temperature and pressuren- Type of application eg industrial, automotiven- Surface roughness and materialn- Required lubricant film thickness and pressure",
-            "summary": "Lists the common additives and selection criteria for lubricants"
+            "text": "Additives are chemicals added to lubricants to enhance their performance Common additives include:n- Detergentsn- Dispersantsn- Anti-wear agentsn- Anti-foaming agentsnSelection criteria for lubricants include:n- Temperature rangen- Load capacityn- Viscosityn- Additive requirementsnThese factors are used to select the appropriate lubricant for a particular application, ensuring optimal performance and lifespan of the system",
+            "summary": "Lists the common additives used in lubricants and the selection criteria for lubricants"
         },
         "context": {
             "preceding_text": "Lubricating Greases",
@@ -625,7 +702,7 @@
     },
     {
         "metadata": {
-            "id": "667494bd-1025-4725-aa8c-4dd574af1775",
+            "id": "6e31fb43-b270-40f7-bbf5-94b192650e79",
             "source": {
                 "file_name": "lubrificacao.pdf",
                 "page_number": 5
@@ -636,68 +713,68 @@
                 "friction",
                 "resistance"
             ],
-            "created_at": "2025-01-11T12:46:42.687845"
+            "created_at": "2025-01-11T12:52:01.884248"
         },
         "content": {
-            "text": "Friction is a fundamental concept that opposes movement between solids, liquids, or gases It is measured by a force called frictional force, which arises when one body moves over another Friction is a generic term that encompasses various types of resistance, including static, kinetic, and rolling friction In the context of solids, friction can be defined as the resistance that occurs when one body moves over another, resulting in a force that opposes motion",
+            "text": "Friction is a fundamental concept in physics that refers to the resistance opposing movement between solids, liquids, or gases It is measured by a force called frictional force and is a ubiquitous phenomenon in various aspects of human life In the context of solid-to-solid movement, friction is defined as the resistance that occurs when one body moves over another This resistance can be beneficial, such as allowing us to walk, or detrimental, resulting in energy loss, heat generation, noise, and wear",
             "summary": "Explains the concept of friction, its definition, and its effects on movement"
         },
         "context": {
             "preceding_text": "",
-            "following_text": "Friction has a significant impact on human life"
+            "following_text": "Friction can have a significant impact on human life"
         }
     },
     {
         "metadata": {
-            "id": "4b41a894-62da-40c6-ba20-6a1b3b836da0",
+            "id": "3fd9d198-de17-4686-8574-bdc47c5cd272",
             "source": {
                 "file_name": "lubrificacao.pdf",
                 "page_number": 5
             },
-            "title": "The Impact of Friction on Human Life",
+            "title": "The Importance of Minimizing Friction",
             "tags": [
-                "human",
-                "life",
-                "friction"
+                "importance",
+                "minimizing",
+                "fluids"
             ],
-            "created_at": "2025-01-11T12:46:42.687845"
+            "created_at": "2025-01-11T12:52:01.884248"
         },
         "content": {
-            "text": "Friction has a significant impact on human life, often acting in favor or against us While it enables us to walk and perform various tasks, it can also be a hindrance, causing energy loss, heat buildup, noise, and wear To minimize friction, various techniques have been developed, including lubrication The goal is to reduce solid-to-solid contact, which is the primary cause of friction-related problems",
-            "summary": "Discusses the impact of friction on human life and its effects"
+            "text": "Friction can have a significant impact on human life, and efforts have been made to minimize its effects The least friction is observed in gases, followed by fluids, and then solids Since fluid friction is always lower than solid friction, lubrication plays a crucial role in reducing friction between surfaces By interposing a fluid substance between two surfaces, lubrication avoids solid-to-solid contact, resulting in fluid friction and minimizing the negative consequences associated with friction, such as energy loss, heat generation, noise, and wear",
+            "summary": "Discusses the importance of minimizing friction and its effects on human life"
         },
         "context": {
-            "preceding_text": "Friction is a fundamental concept that opposes movement",
-            "following_text": "Lubrication is a technique used to minimize friction"
+            "preceding_text": "Understanding Friction",
+            "following_text": "Lubrication is a technique used to reduce friction"
         }
     },
     {
         "metadata": {
-            "id": "0fc58269-a4f4-4ce9-af46-8092d9c616f2",
+            "id": "bc9de16c-e938-4660-aa7b-37683ebb93c0",
             "source": {
                 "file_name": "lubrificacao.pdf",
                 "page_number": 5
             },
-            "title": "Lubrication: Reducing Friction",
+            "title": "The Role of Lubrication",
             "tags": [
                 "lubrication",
-                "friction",
-                "mechanical"
+                "fluids",
+                "efficiency"
             ],
-            "created_at": "2025-01-11T12:46:42.687845"
+            "created_at": "2025-01-11T12:52:01.884248"
         },
         "content": {
-            "text": "Lubrication is a technique used to minimize friction by interposing a fluid substance between two surfaces This approach avoids solid-to-solid contact, resulting in lower fluid friction compared to solid friction Lubrication is essential in various applications, including machinery, engines, and other mechanical systems By reducing friction, lubrication helps to prevent energy loss, heat buildup, noise, and wear, ultimately improving the efficiency and lifespan of mechanical components",
-            "summary": "Describes the technique of lubrication and its effects on reducing friction"
+            "text": "Lubrication is a technique used to reduce friction between surfaces by interposing a fluid substance, such as oil or grease, between them This fluid substance prevents solid-to-solid contact, resulting in fluid friction and minimizing the negative consequences associated with friction Lubrication is essential in various applications, including machinery, engines, and other mechanical systems, where it helps to reduce energy loss, heat generation, noise, and wear By understanding the principles of friction and lubrication, it is possible to design and optimize systems that minimize friction and maximize efficiency",
+            "summary": "Explains the role of lubrication in reducing friction and improving efficiency"
         },
         "context": {
-            "preceding_text": "Friction has a significant impact on human life",
+            "preceding_text": "Friction can have a significant impact on human life",
             "following_text": ""
         }
     },
     {
         "metadata": {
-            "id": "a6fbd9bc-ce4b-4cc1-bb79-5da0ba9705ef",
+            "id": "597a3157-a1d8-43e9-9cab-407daa4c3cb3",
             "source": {
                 "file_name": "lubrificacao.pdf",
                 "page_number": 6
@@ -706,9 +783,9 @@
             "tags": [
                 "physics",
                 "friction",
-                "types"
+                "solid"
             ],
-            "created_at": "2025-01-11T12:46:47.981149"
+            "created_at": "2025-01-11T12:52:06.977712"
         },
         "content": {
             "text": "Solid friction can be categorized into two primary types: sliding friction and rolling friction Sliding friction occurs when the points of one body are in contact with successive points of another, resulting in a significant amount of frictional force On the other hand, rolling friction takes place when the successive points of one body come into contact with successive points of the other, resulting in a much smaller frictional force compared to sliding friction",
@@ -716,12 +793,12 @@
         },
         "context": {
             "preceding_text": "",
-            "following_text": "Rolling friction is characterized by its smaller magnitude"
+            "following_text": "Rolling friction is characterized by its significantly lower frictional force"
         }
     },
     {
         "metadata": {
-            "id": "f3baf278-6eb6-43f8-ad5e-35a99aa58e8c",
+            "id": "44ca423d-404e-4a3f-bb6d-842c4f807f40",
             "source": {
                 "file_name": "lubrificacao.pdf",
                 "page_number": 6
@@ -732,44 +809,20 @@
                 "friction",
                 "characteristics"
             ],
-            "created_at": "2025-01-11T12:46:47.981149"
+            "created_at": "2025-01-11T12:52:06.977712"
         },
         "content": {
-            "text": "Rolling friction is characterized by its smaller magnitude compared to sliding friction This is due to the fact that rolling friction involves a continuous contact between the successive points of the two bodies, resulting in a more efficient transfer of force As a result, rolling friction is often encountered in situations where objects are in motion and are in contact with a surface, such as wheels rolling on a road or a ball rolling on a surface",
-            "summary": "Describes the characteristics of rolling friction and its occurrence in real-life situations"
+            "text": "Rolling friction is characterized by its significantly lower frictional force compared to sliding friction This is due to the fact that the rolling motion allows the bodies to move smoothly over each other, reducing the frictional resistance As a result, rolling friction is often encountered in situations where objects are rotating or rolling over a surface, such as wheels on a road or a ball rolling on the ground",
+            "summary": "Describes the characteristics of rolling friction and its common occurrences"
         },
         "context": {
             "preceding_text": "Solid friction can be categorized into two primary types",
-            "following_text": "In contrast to rolling friction, sliding friction"
-        }
-    },
-    {
-        "metadata": {
-            "id": "e61778d3-a56c-4d76-82ac-2a7b4467b3e9",
-            "source": {
-                "file_name": "lubrificacao.pdf",
-                "page_number": 6
-            },
-            "title": "Comparison with Sliding Friction",
-            "tags": [
-                "sliding",
-                "friction",
-                "comparison"
-            ],
-            "created_at": "2025-01-11T12:46:47.981149"
-        },
-        "content": {
-            "text": "In contrast to rolling friction, sliding friction is much larger and is often encountered in situations where objects are in contact with each other but are not in continuous motion Sliding friction occurs when the points of one body are in contact with successive points of another, resulting in a significant amount of frictional force This type of friction is often encountered in situations where objects are being pulled or pushed across a surface, such as a block being pulled across a floor",
-            "summary": "Compares sliding friction with rolling friction and highlights their differences"
-        },
-        "context": {
-            "preceding_text": "Rolling friction is characterized by its smaller magnitude",
             "following_text": ""
         }
     },
     {
         "metadata": {
-            "id": "7922f1b2-4da4-4653-93cc-c2d5724240d9",
+            "id": "b1dda19a-2bc4-4889-a56a-5ca78b38f3e2",
             "source": {
                 "file_name": "lubrificacao.pdf",
                 "page_number": 7
@@ -778,13 +831,13 @@
             "tags": [
                 "physics",
                 "friction",
-                "laws"
+                "engineering"
             ],
-            "created_at": "2025-01-11T12:46:52.601176"
+            "created_at": "2025-01-11T12:52:11.108000"
         },
         "content": {
-            "text": "The laws governing sliding friction are fundamental principles that describe the relationship between frictional forces and the applied loads These laws provide a clear understanding of how friction behaves under different conditions",
-            "summary": "Introduces the fundamental principles governing sliding friction"
+            "text": "The laws governing sliding friction are essential in understanding the behavior of frictional forces between moving surfaces These laws provide a fundamental framework for analyzing and predicting the effects of friction in various engineering and scientific applications",
+            "summary": "Explains the importance of laws governing sliding friction"
         },
         "context": {
             "preceding_text": "",
@@ -793,7 +846,7 @@
     },
     {
         "metadata": {
-            "id": "76a45533-3d22-485d-8b4c-390d77a4113a",
+            "id": "22435863-8ef3-4e9e-ad2a-bdd0536aed7f",
             "source": {
                 "file_name": "lubrificacao.pdf",
                 "page_number": 7
@@ -804,20 +857,20 @@
                 "load",
                 "proportionality"
             ],
-            "created_at": "2025-01-11T12:46:52.601176"
+            "created_at": "2025-01-11T12:52:11.108000"
         },
         "content": {
-            "text": "The first law states that friction is directly proportional to the applied load This means that as the load increases, the friction force also increases in the same proportion Mathematically, this can be represented as F   x P, where F is the friction force,  is the coefficient of friction, and P is the applied load This law indicates that the coefficient of friction remains constant, regardless of the load applied",
-            "summary": "Explains the first law of sliding friction, which describes the direct proportionality between friction and applied load"
+            "text": "The first law states that friction is directly proportional to the applied load This means that as the load increases, the friction force also increases in the same proportion Mathematically, this is represented by the equation F   x P, where F is the friction force,  is the coefficient of friction, and P is the applied load This law indicates that the coefficient of friction remains constant, regardless of the load applied",
+            "summary": "Describes the 1st law of sliding friction, stating that friction is directly proportional to the applied load"
         },
         "context": {
-            "preceding_text": "The laws governing sliding friction are fundamental principles",
+            "preceding_text": "The laws governing sliding friction are essential in understanding the behavior of frictional forces between moving surfaces",
             "following_text": "The 2nd Law: Independence of Friction from Apparent Contact Area"
         }
     },
     {
         "metadata": {
-            "id": "393bf25a-ea84-47e7-a74f-d74205f7dd86",
+            "id": "144cacc7-0db5-43d1-97cc-67af4fa57069",
             "source": {
                 "file_name": "lubrificacao.pdf",
                 "page_number": 7
@@ -828,11 +881,11 @@
                 "contact",
                 "independence"
             ],
-            "created_at": "2025-01-11T12:46:52.601176"
+            "created_at": "2025-01-11T12:52:11.108000"
         },
         "content": {
-            "text": "The second law states that friction, as well as the coefficient of friction, are independent of the area of apparent contact between moving surfaces This means that the friction force does not depend on the size of the contact area between the two surfaces, but rather on the applied load and the coefficient of friction This law is crucial in understanding the behavior of friction in various real-world scenarios",
-            "summary": "Describes the second law of sliding friction, which states that friction is independent of the apparent contact area"
+            "text": "The second law states that friction, as well as the coefficient of friction, are independent of the area of apparent contact between moving surfaces This means that the friction force and coefficient of friction do not change with the size or shape of the surfaces in contact This law is crucial in understanding the behavior of friction in various real-world scenarios, where the contact area between surfaces can vary significantly",
+            "summary": "Explains the 2nd law of sliding friction, stating that friction is independent of the apparent contact area"
         },
         "context": {
             "preceding_text": "The 1st Law: Direct Proportionality between Friction and Applied Load",
@@ -841,7 +894,7 @@
     },
     {
         "metadata": {
-            "id": "c78971e0-fedf-445a-86ff-a5ec9c48a6cd",
+            "id": "951724e6-6b9f-4af7-bf2e-e47a7c73155d",
             "source": {
                 "file_name": "lubrificacao.pdf",
                 "page_number": 8
@@ -852,68 +905,68 @@
                 "friction",
                 "laws"
             ],
-            "created_at": "2025-01-11T12:46:57.386301"
+            "created_at": "2025-01-11T12:52:16.337620"
         },
         "content": {
-            "text": "Friction is a fundamental force that opposes motion between two surfaces in contact The 3rd Law states that kinetic friction, which occurs when bodies are already in motion, is lower than static friction, which occurs when bodies are stationary This is because the coefficient of kinetic friction is lower than that of static friction This means that once an object starts moving, it requires less force to maintain its motion than it did to initiate the motion",
-            "summary": "Explains the fundamental laws and characteristics of friction"
+            "text": "Friction is a fundamental concept in physics that describes the resistance encountered when two surfaces are in contact and move relative to each other The 3rd Law states that kinetic friction, which occurs when a body is already in motion, is lower than static friction, which occurs when a body is stationary This is because the coefficient of kinetic friction is lower than that of static friction The 4th Law further explains that friction decreases with lubrication and polishing of surfaces, as these processes reduce the coefficient of friction",
+            "summary": "Explains the fundamental concept of friction and its laws"
         },
         "context": {
             "preceding_text": "",
-            "following_text": "The 4th Law highlights the impact of surface conditions on friction"
+            "following_text": "Rolling friction, which occurs when a body rolls over a surface"
         }
     },
     {
         "metadata": {
-            "id": "ff4c0d0c-6338-42d1-a7c7-ed6eda48558c",
+            "id": "f110d938-501b-43fd-9a8c-4760ed640204",
             "source": {
                 "file_name": "lubrificacao.pdf",
                 "page_number": 8
             },
-            "title": "Effects of Surface Conditions on Friction",
-            "tags": [
-                "surface",
-                "conditions",
-                "friction"
-            ],
-            "created_at": "2025-01-11T12:46:57.386301"
-        },
-        "content": {
-            "text": "The 4th Law highlights the impact of surface conditions on friction Lubrication and polishing of surfaces can significantly reduce friction by decreasing the coefficient of friction This is because lubricants and polished surfaces create a smoother interface between the two surfaces, reducing the resistance to motion Additionally, elastic surfaces, which undergo temporary deformations, offer lower rolling resistance than plastic surfaces, which undergo permanent deformations However, in some cases, rolling friction can increase due to wheel deformation, such as tires with low pressure",
-            "summary": "Discusses the impact of surface conditions on friction and its effects"
-        },
-        "context": {
-            "preceding_text": "Friction is a fundamental force that opposes motion",
-            "following_text": "Rolling friction is a type of friction that occurs when an object rolls over a surface"
-        }
-    },
-    {
-        "metadata": {
-            "id": "1b6d1183-f142-4de6-8984-fc82d08979b3",
-            "source": {
-                "file_name": "lubrificacao.pdf",
-                "page_number": 8
-            },
-            "title": "Rolling Friction and Surface Deformation",
+            "title": "Rolling Friction and Surface Deformations",
             "tags": [
                 "rolling",
                 "friction",
-                "deformation"
+                "deformations"
             ],
-            "created_at": "2025-01-11T12:46:57.386301"
+            "created_at": "2025-01-11T12:52:16.337620"
         },
         "content": {
-            "text": "Rolling friction is a type of friction that occurs when an object rolls over a surface The resistance to rolling motion is mainly due to deformations of the surface Elastic surfaces, which can recover their original shape after deformation, offer lower rolling resistance than plastic surfaces, which undergo permanent deformation This is because elastic surfaces can absorb and distribute the energy of the rolling object more efficiently, reducing the resistance to motion However, in some cases, rolling friction can increase due to wheel deformation, such as tires with low pressure, which can lead to increased resistance and energy loss",
-            "summary": "Explains the concept of rolling friction and its relationship with surface deformation"
+            "text": "Rolling friction, which occurs when a body rolls over a surface, is characterized by resistance mainly due to deformations Elastic surfaces, which undergo temporary deformations, offer lower rolling resistance than plastic surfaces, which undergo permanent deformations However, in some cases, rolling friction can increase due to wheel deformation, such as tires with low pressure This highlights the importance of surface properties and deformation characteristics in determining rolling friction",
+            "summary": "Describes the characteristics of rolling friction and its relation to surface deformations"
         },
         "context": {
-            "preceding_text": "The 4th Law highlights the impact of surface conditions on friction",
+            "preceding_text": "Friction is a fundamental concept in physics",
+            "following_text": "Lubrication and polishing of surfaces can significantly reduce friction"
+        }
+    },
+    {
+        "metadata": {
+            "id": "38e991be-69b7-4f16-9787-9e28d68cba6e",
+            "source": {
+                "file_name": "lubrificacao.pdf",
+                "page_number": 8
+            },
+            "title": "Lubrication and Surface Polishing",
+            "tags": [
+                "lubrication",
+                "polishing",
+                "surfaces"
+            ],
+            "created_at": "2025-01-11T12:52:16.337620"
+        },
+        "content": {
+            "text": "Lubrication and polishing of surfaces can significantly reduce friction by decreasing the coefficient of friction This is achieved by reducing the contact area between the surfaces and minimizing the force required to overcome friction The use of lubricants and polished surfaces can therefore improve the efficiency and performance of mechanical systems by reducing friction and wear",
+            "summary": "Explains the benefits of lubrication and surface polishing in reducing friction"
+        },
+        "context": {
+            "preceding_text": "Rolling friction, which occurs when a body rolls over a surface",
             "following_text": ""
         }
     },
     {
         "metadata": {
-            "id": "5b5ca45e-aaeb-42dd-a729-8f8819fdc2f4",
+            "id": "4a581bb2-5149-4a86-9880-96f0294cd594",
             "source": {
                 "file_name": "lubrificacao.pdf",
                 "page_number": 9
@@ -924,116 +977,140 @@
                 "friction",
                 "rolling"
             ],
-            "created_at": "2025-01-11T12:47:04.648820"
+            "created_at": "2025-01-11T12:52:20.688497"
         },
         "content": {
-            "text": "The laws of rolling friction describe the relationship between the force of rolling resistance and various factors The 1st Law states that rolling resistance is directly proportional to the applied load, meaning that the greater the weight or pressure applied to a rolling object, the greater the resistance it will encounter The 2nd Law states that rolling friction is inversely proportional to the radius of the cylinder or sphere, indicating that larger objects will experience less friction per unit of load than smaller ones",
-            "summary": "Explains the laws of rolling friction and their relationship to applied load and object size"
+            "text": "The laws of rolling friction describe the relationship between the rolling resistance and various factors The first law states that rolling resistance is directly proportional to the applied load This means that as the load on a rolling object increases, the resistance to its motion also increases The second law states that rolling friction is inversely proportional to the radius of the cylinder or sphere This implies that as the radius of the rolling object increases, the frictional resistance decreases",
+            "summary": "Explains the laws of rolling friction and their relationship to applied load and radius"
         },
         "context": {
             "preceding_text": "",
-            "following_text": "The effectiveness of lubrication is significantly impacted"
+            "following_text": "The smoothness of a surface plays a crucial role in reducing friction"
         }
     },
     {
         "metadata": {
-            "id": "d27cddd9-fad7-4a7c-98a9-9d46a33060f5",
+            "id": "5ed2148c-2ea5-4c18-b865-0a7d1cbfcd5c",
             "source": {
                 "file_name": "lubrificacao.pdf",
                 "page_number": 9
             },
-            "title": "Lubrication and Surface Roughness",
+            "title": "Surface Roughness and Lubrication",
             "tags": [
+                "surfaces",
                 "lubrication",
-                "surface",
-                "roughness"
+                "friction"
             ],
-            "created_at": "2025-01-11T12:47:04.648820"
+            "created_at": "2025-01-11T12:52:20.688497"
         },
         "content": {
-            "text": "The effectiveness of lubrication is significantly impacted by the surface roughness of the materials in contact Even with advanced mirroring processes, it is nearly impossible to produce a truly smooth or flat surface This is due to the inherent microscopic irregularities present on solid surfaces As a result, lubricants play a crucial role in reducing friction by filling in these microscopic gaps and allowing surfaces to slide past each other more smoothly",
-            "summary": "Discusses the impact of surface roughness on lubrication effectiveness"
+            "text": "The smoothness of a surface plays a crucial role in reducing friction However, even with modern mirroring processes, it is almost impossible to produce a truly smooth or flat surface This is due to the inherent roughness of solid surfaces, which can be observed using electron microscopes and other precision methods To mitigate this issue, lubricants are used to reduce friction between surfaces in contact Lubricants work by filling in the microscopic gaps and irregularities on the surface, allowing the surfaces to slide past each other more easily",
+            "summary": "Discusses the role of surface smoothness and lubrication in reducing friction"
         },
         "context": {
-            "preceding_text": "The laws of rolling friction describe the relationship",
+            "preceding_text": "The laws of rolling friction describe the relationship between the rolling resistance and various factors",
+            "following_text": "The roughness of surfaces has significant implications for various engineering applications"
+        }
+    },
+    {
+        "metadata": {
+            "id": "9e939599-e444-4ca8-9d16-cb3460f851ed",
+            "source": {
+                "file_name": "lubrificacao.pdf",
+                "page_number": 9
+            },
+            "title": "Implications of Surface Roughness",
+            "tags": [
+                "engineering",
+                "friction",
+                "surfaces"
+            ],
+            "created_at": "2025-01-11T12:52:20.688497"
+        },
+        "content": {
+            "text": "The roughness of surfaces has significant implications for various engineering applications, including rolling friction The inability to achieve a truly smooth surface means that even with the best lubrication, some level of friction will always remain This highlights the importance of understanding the underlying mechanisms of friction and developing strategies to minimize its effects By acknowledging the limitations of surface smoothness, engineers can design more effective lubrication systems and develop materials that are better suited to reduce friction",
+            "summary": "Explains the implications of surface roughness on engineering applications and friction"
+        },
+        "context": {
+            "preceding_text": "The smoothness of a surface plays a crucial role in reducing friction",
             "following_text": ""
         }
     },
     {
         "metadata": {
-            "id": "afcb1700-e751-4aee-a1fe-eb9c266c8831",
+            "id": "5cf0becf-7977-438c-802c-66c1f14ef5b4",
             "source": {
                 "file_name": "lubrificacao.pdf",
                 "page_number": 10
             },
-            "title": "Surface Contact and Friction",
+            "title": "Friction and Contact Points",
             "tags": [
                 "friction",
-                "surface",
-                "contact"
+                "contact",
+                "mechanics"
             ],
-            "created_at": "2025-01-11T12:47:09.784142"
+            "created_at": "2025-01-11T12:52:25.630868"
         },
         "content": {
-            "text": "When two surfaces, such as steel bars, are placed on top of each other, they will make contact at specific points due to their roughness These points of contact are responsible for the friction between the surfaces The more load applied, the greater the number of points in contact, which in turn increases the frictional force",
-            "summary": "Explains the concept of surface contact and its relationship with friction"
+            "text": "When two surfaces, such as steel bars, are placed on top of each other, they will make contact at specific points, known as salient points These points are the areas where the surfaces are not perfectly smooth, creating a higher concentration of contact points The more load applied to the surfaces, the greater the number of contact points will be This phenomenon is a fundamental aspect of friction and contact mechanics",
+            "summary": "Explains the concept of contact points and their role in friction"
         },
         "context": {
             "preceding_text": "",
-            "following_text": "The apparent smoothness of a surface is an illusion"
+            "following_text": "The contact points between the steel bars are a result of the surface roughness of the materials"
         }
     },
     {
         "metadata": {
-            "id": "b8f16e6e-35de-453c-bc5e-dab11c4a21d6",
+            "id": "f0bf0dc5-2201-4299-893f-0274acffdbd2",
             "source": {
                 "file_name": "lubrificacao.pdf",
                 "page_number": 10
             },
-            "title": "Asperities and Contact Points",
+            "title": "Asperities and Surface Roughness",
             "tags": [
                 "asperities",
-                "contact",
-                "irregularities"
+                "surface",
+                "roughness"
             ],
-            "created_at": "2025-01-11T12:47:09.784142"
+            "created_at": "2025-01-11T12:52:25.630868"
         },
         "content": {
-            "text": "The apparent smoothness of a surface is an illusion, as it is composed of tiny asperities or irregularities When two surfaces are in contact, these asperities interact, creating points of contact that are responsible for the frictional force The greater the load, the more asperities come into contact, resulting in increased friction",
-            "summary": "Describes the role of asperities in creating contact points and friction"
+            "text": "The contact points between the steel bars are a result of the surface roughness of the materials The surface of any material is not perfectly smooth, but rather consists of small asperities or irregularities These asperities create the contact points when two surfaces are pressed together The size and distribution of these asperities play a crucial role in determining the frictional behavior of the surfaces",
+            "summary": "Describes the role of asperities and surface roughness in creating contact points"
         },
         "context": {
             "preceding_text": "When two surfaces, such as steel bars, are placed on top of each other",
-            "following_text": "The relationship between friction and load is directly proportional"
+            "following_text": "The number of contact points between the steel bars increases with the applied load"
         }
     },
     {
         "metadata": {
-            "id": "32e4a4ec-0b96-4687-8bf0-e7b7a22ae116",
+            "id": "60dee0d5-f5e7-4145-9076-3833c711d7ae",
             "source": {
                 "file_name": "lubrificacao.pdf",
                 "page_number": 10
             },
-            "title": "Friction and Load Relationship",
+            "title": "Load-Dependent Contact",
             "tags": [
                 "load",
-                "friction",
-                "proportionality"
+                "contact",
+                "friction"
             ],
-            "created_at": "2025-01-11T12:47:09.784142"
+            "created_at": "2025-01-11T12:52:25.630868"
         },
         "content": {
-            "text": "The relationship between friction and load is directly proportional As the load increases, the number of points in contact also increases, resulting in a greater frictional force This is why surfaces that are smooth to the touch can still exhibit significant friction when subjected to a heavy load",
-            "summary": "Explains the direct relationship between friction and load"
+            "text": "The number of contact points between the steel bars increases with the applied load This is because the increased pressure causes the asperities to deform and make contact with each other The resulting contact points are responsible for the frictional forces that develop between the surfaces Understanding the relationship between load and contact points is essential for designing and optimizing systems that rely on friction, such as brakes, clutches, and bearings",
+            "summary": "Explains the relationship between load and contact points in friction"
         },
         "context": {
-            "preceding_text": "The greater the load, the more asperities come into contact",
+            "preceding_text": "The contact points between the steel bars are a result of the surface roughness of the materials",
             "following_text": ""
         }
     },
     {
         "metadata": {
-            "id": "fc4a0d25-c070-4ea3-a787-38d817c3e445",
+            "id": "5e194e07-3ce8-4254-8fd8-f50f7ce8d29e",
             "source": {
                 "file_name": "lubrificacao.pdf",
                 "page_number": 11
@@ -1044,20 +1121,20 @@
                 "heat",
                 "metal"
             ],
-            "created_at": "2025-01-11T12:47:14.383227"
+            "created_at": "2025-01-11T12:52:31.121957"
         },
         "content": {
-            "text": "When two steel bars are moved against each other, a significant amount of heat is generated at the contact points due to the friction between them This heat release is a result of the mechanical energy being converted into thermal energy The combination of pressure and temperature at these points causes them to weld together, forming tiny welds known as microwelds",
-            "summary": "Explains how friction generates heat and causes microwelds"
+            "text": "When two steel bars are moved against each other, friction generates heat at the contact points This heat is a result of the mechanical energy being converted into thermal energy due to the resistance encountered during movement The heat generated causes the contact points to weld together, forming tiny welds known as microwelds",
+            "summary": "Explains how friction generates heat and forms microwelds"
         },
         "context": {
             "preceding_text": "",
-            "following_text": "In order to continue moving the steel bars, a greater force must be applied"
+            "following_text": "Microwelds and Metal Wear"
         }
     },
     {
         "metadata": {
-            "id": "d7d2183c-09d2-4c0e-bb89-852ac32e8a12",
+            "id": "a60ab8c8-6c46-4b1b-9edd-aded240adc9f",
             "source": {
                 "file_name": "lubrificacao.pdf",
                 "page_number": 11
@@ -1068,20 +1145,20 @@
                 "metal",
                 "friction"
             ],
-            "created_at": "2025-01-11T12:47:14.383227"
+            "created_at": "2025-01-11T12:52:31.121957"
         },
         "content": {
-            "text": "In order to continue moving the steel bars, a greater force must be applied to break these microwelds However, when the microwelds break, metal particles are dragged from the surfaces of the parts, resulting in metal wear This wear can lead to a reduction in the lifespan of the parts and may also cause them to become rough and uneven",
-            "summary": "Describes the effects of microwelds on metal wear and part lifespan"
+            "text": "As the movement continues, the microwelds formed at the contact points need to be broken in order to allow the parts to move freely This requires the application of a greater force, which ultimately leads to metal wear When the microwelds break, metal particles are dragged from the surfaces of the parts, resulting in wear and tear",
+            "summary": "Describes the process of microwelds breaking and causing metal wear"
         },
         "context": {
             "preceding_text": "When two steel bars are moved against each other",
-            "following_text": "If the contact points continue to form deeper welds"
+            "following_text": "Seizure and Breakage"
         }
     },
     {
         "metadata": {
-            "id": "55d36e95-c6bc-4772-9c4c-ede699603526",
+            "id": "5d33ceb5-a677-4dc3-945b-e51fa700a69c",
             "source": {
                 "file_name": "lubrificacao.pdf",
                 "page_number": 11
@@ -1092,110 +1169,110 @@
                 "breakage",
                 "friction"
             ],
-            "created_at": "2025-01-11T12:47:14.383227"
+            "created_at": "2025-01-11T12:52:31.121957"
         },
         "content": {
-            "text": "If the contact points continue to form deeper welds, the parts may seize or break Seizure occurs when the microwelds become so strong that they prevent the parts from moving freely, causing them to stick together Breakage, on the other hand, occurs when the parts become so worn or damaged that they are no longer able to withstand the forces applied to them",
-            "summary": "Explains the consequences of prolonged friction, including seizure and breakage"
+            "text": "If the microwelds form deeper welds, the parts may seize or break This occurs when the friction and heat generated at the contact points become too intense, causing the metal to bond strongly and preventing movement In extreme cases, the parts may even break due to the excessive stress and heat generated during the friction process",
+            "summary": "Explains the consequences of excessive friction and heat, including seizure and breakage"
         },
         "context": {
-            "preceding_text": "In order to continue moving the steel bars, a greater force must be applied",
+            "preceding_text": "As the movement continues, the microwelds formed",
             "following_text": ""
         }
     },
     {
         "metadata": {
-            "id": "f8bcc002-edf1-49fa-9a59-0ed4ec0663ba",
+            "id": "b2f46a83-c71d-4d37-b630-5c5918611ff1",
             "source": {
                 "file_name": "lubrificacao.pdf",
                 "page_number": 12
             },
-            "title": "Fundamentals of Lubrication",
+            "title": "Definition of Lubrication",
             "tags": [
                 "lubrication",
                 "friction",
                 "wear"
             ],
-            "created_at": "2025-01-11T12:47:18.693938"
+            "created_at": "2025-01-11T12:52:35.333869"
         },
         "content": {
-            "text": "Lubrication is a method used to reduce friction and wear between two surfaces in contact This is achieved by placing a layer of lubricant between the surfaces, thereby preventing direct contact and minimizing the frictional forces The primary function of a lubricant is to reduce the friction between two rubbing surfaces, making it an essential component in various industrial and mechanical applications",
-            "summary": "Explains the concept of lubrication and its purpose in reducing friction and wear"
+            "text": "Lubrication is a method used to reduce friction and wear between two surfaces in contact This is achieved by placing a layer of lubricant between the surfaces, effectively keeping them separated The primary goal of lubrication is to minimize the friction between the surfaces, thereby reducing wear and tear",
+            "summary": "Explains the concept of lubrication and its purpose"
         },
         "context": {
             "preceding_text": "",
-            "following_text": "Lubricants are materials that possess certain properties"
+            "following_text": "Lubricants are materials that, when placed between two rubbing surfaces"
         }
     },
     {
         "metadata": {
-            "id": "c107e76e-d657-4f52-9f23-f49d5d6af05b",
+            "id": "972197d8-2c94-493a-a14b-5939d4ecaee1",
             "source": {
                 "file_name": "lubrificacao.pdf",
                 "page_number": 12
             },
-            "title": "Characteristics of Lubricants",
+            "title": "Properties of Lubricants",
             "tags": [
                 "lubricants",
-                "properties",
-                "viscosity"
+                "friction",
+                "properties"
             ],
-            "created_at": "2025-01-11T12:47:18.693938"
+            "created_at": "2025-01-11T12:52:35.333869"
         },
         "content": {
-            "text": "Lubricants are materials that possess certain properties, which enable them to effectively reduce friction between two surfaces These properties include viscosity, which is the measure of a fluids resistance to flow, and surface tension, which is the force that acts along the surface of a liquid Lubricants can be in the form of liquids, gases, or solids, and their choice depends on the specific application and operating conditions",
-            "summary": "Describes the properties of lubricants and their role in reducing friction"
+            "text": "Lubricants are materials that, when placed between two rubbing surfaces, reduce friction They can be in the form of liquids, gases, or solids The key properties of lubricants include their ability to reduce friction, absorb shock, and dissipate heat Lubricants can be classified into different types based on their composition, such as oil-based, water-based, or solid-based lubricants",
+            "summary": "Describes the properties and types of lubricants"
         },
         "context": {
-            "preceding_text": "Lubrication is a method used to reduce friction",
-            "following_text": "There are several types of lubrication"
+            "preceding_text": "Lubrication is a method used to reduce friction and wear",
+            "following_text": "The primary function of lubricants is to reduce friction"
         }
     },
     {
         "metadata": {
-            "id": "65fb6f92-6126-4c1e-bafa-71563698c678",
+            "id": "a50897bc-cfa5-4caa-b1a9-50d5ac92f076",
             "source": {
                 "file_name": "lubrificacao.pdf",
                 "page_number": 12
             },
-            "title": "Types of Lubrication",
+            "title": "Function of Lubricants",
             "tags": [
-                "types",
-                "lubrication",
-                "hydrodynamic"
+                "lubricants",
+                "friction",
+                "mechanisms"
             ],
-            "created_at": "2025-01-11T12:47:18.693938"
+            "created_at": "2025-01-11T12:52:35.333869"
         },
         "content": {
-            "text": "There are several types of lubrication, including boundary lubrication, hydrodynamic lubrication, and elastohydrodynamic lubrication Boundary lubrication occurs when the lubricant film is thin and the surfaces are in direct contact Hydrodynamic lubrication occurs when the lubricant film is thick and the surfaces are separated by a layer of fluid Elastohydrodynamic lubrication occurs when the lubricant film is thick and the surfaces are in contact, but the lubricant film is able to deform and separate the surfaces",
-            "summary": "Classifies lubrication into different types and explains their characteristics"
+            "text": "The primary function of lubricants is to reduce friction between two surfaces in contact This is achieved through several mechanisms, including:n Reducing the contact area between the surfacesn Increasing the distance between the surfacesn Reducing the coefficient of friction between the surfacesn Absorbing shock and vibrationsn Dissipating heat generated by friction",
+            "summary": "Explains the primary function of lubricants and their mechanisms"
         },
         "context": {
-            "preceding_text": "Lubricants are materials that possess certain properties",
-            "following_text": "Lubrication plays a crucial role in various industrial"
+            "preceding_text": "Lubricants are materials that, when placed between two rubbing surfaces",
+            "following_text": "Lubrication is essential in various industries"
         }
     },
     {
         "metadata": {
-            "id": "11070245-cf1b-4ef0-b3db-e7fef23ae464",
+            "id": "98bc164d-21e4-46f0-844f-025c5a0c0351",
             "source": {
                 "file_name": "lubrificacao.pdf",
                 "page_number": 12
             },
             "title": "Importance of Lubrication",
             "tags": [
-                "importance",
                 "lubrication",
-                "efficiency"
+                "importance",
+                "industries"
             ],
-            "created_at": "2025-01-11T12:47:18.693938"
+            "created_at": "2025-01-11T12:52:35.333869"
         },
         "content": {
-            "text": "Lubrication plays a crucial role in various industrial and mechanical applications, including engines, gearboxes, and bearings It helps to reduce friction, wear, and heat generation, thereby increasing the efficiency and lifespan of machinery Lubrication also helps to prevent corrosion and contamination, which can lead to equipment failure In addition, lubrication can help to reduce energy consumption and emissions, making it an essential component in modern industrial and automotive applications",
-            "summary": "Highlights the importance of lubrication in various industrial and mechanical applications"
+            "text": "Lubrication is essential in various industries, including manufacturing, transportation, and construction It helps to reduce wear and tear on machinery and equipment, thereby increasing their lifespan and reducing maintenance costs Lubrication also helps to improve the efficiency and performance of machines, reducing energy consumption and emissions",
+            "summary": "Highlights the importance of lubrication in various industries"
         },
         "context": {
-            "preceding_text": "There are several types of lubrication",
+            "preceding_text": "The primary function of lubricants is to reduce friction",
             "following_text": ""
         }
     }

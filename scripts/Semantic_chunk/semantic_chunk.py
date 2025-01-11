@@ -245,6 +245,9 @@ def extract_text_from_pdfs():
     # Variável para contar as chamadas à IA
     ia_requests_count = 0
 
+    # Início do cronômetro
+    start_time = datetime.now()
+
     # Itera pelos arquivos na pasta de entrada
     for file_name in os.listdir(input_dir):
         if file_name.lower().endswith(".pdf"):
@@ -335,8 +338,34 @@ def extract_text_from_pdfs():
     with open(consolidated_output, "w", encoding="utf-8") as consolidated_file:
         json.dump(consolidated_data, consolidated_file, indent=4, ensure_ascii=False)
 
-    # Exibe o número total de requisições feitas à IA
+    # Tempo total de execução
+    end_time = datetime.now()
+    total_time = end_time - start_time
+
+    # Formatação do tempo total em horas, minutos ou segundos
+    if total_time.total_seconds() < 60:
+        formatted_time = f"{total_time.total_seconds():.2f} segundo" if total_time.total_seconds() == 1 else f"{total_time.total_seconds():.2f} segundos"
+    elif total_time.total_seconds() < 3600:
+        minutes, seconds = divmod(total_time.total_seconds(), 60)
+        formatted_time = (
+                             f"{int(minutes)} minuto" if minutes == 1 else f"{int(minutes)} minutos"
+                         ) + " e " + (
+                             f"{int(seconds)} segundo" if seconds == 1 else f"{int(seconds)} segundos"
+                         )
+    else:
+        hours, remainder = divmod(total_time.total_seconds(), 3600)
+        minutes, seconds = divmod(remainder, 60)
+        formatted_time = (
+                             f"{int(hours)} hora" if hours == 1 else f"{int(hours)} horas"
+                         ) + ", " + (
+                             f"{int(minutes)} minuto" if minutes == 1 else f"{int(minutes)} minutos"
+                         ) + " e " + (
+                             f"{int(seconds)} segundo" if seconds == 1 else f"{int(seconds)} segundos"
+                         )
+
+    # Exibe o número total de requisições feitas à IA e o tempo total de execução
     print(f"Número total de requisições feitas à IA: {ia_requests_count}")
+    print(f"Tempo total de execução: {formatted_time}")
     print(f"Resumo consolidado salvo em: {consolidated_output}")
 
 
