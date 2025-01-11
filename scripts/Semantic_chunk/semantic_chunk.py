@@ -279,15 +279,19 @@ def extract_text_from_pdfs():
                     # Envia o texto interpretado para a IA formatar para JSON
                     formatted_text = format_to_json(summarized_text)
 
+                    print(formatted_text)
+                    print()
 
-                    # Usando expressão regular pra capturar tudo entre []
-                    match = re.search(r'\[.*]', formatted_text, re.DOTALL)
+                    # Usando expressão regular pra capturar tudo entre colchetes []
+                    match = re.search(r'\[(.*)]$', formatted_text, re.DOTALL)
                     if match:
-                        json_text = match.group(0)  # Pega o conteúdo do JSON
+                        json_text = match.group(1)  # Pega o conteúdo do JSON sem os colchetes
                     else:
                         print("JSON válido não encontrado.")
 
                     print(json_text)
+                    print()
+
 
                     try:
 
