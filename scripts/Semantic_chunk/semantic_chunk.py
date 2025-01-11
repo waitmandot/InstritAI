@@ -284,11 +284,13 @@ def extract_text_from_pdfs():
                     if match:
                         json_text = match.group(1)  # Pega o conteúdo do JSON sem os colchetes
                     else:
-                        print("JSON válido não encontrado.")
+                        print(f"JSON válido não encontrado na página {page_number}. Ignorando.")
+                        continue
 
                     try:
-                        # Adiciona ao consolidado
-                        consolidated_data.extend(json_text)
+                        # Converte o texto JSON em um dicionário Python
+                        json_dict = json.loads(f"[{json_text}]")  # Certifica que o texto seja interpretado como JSON válido
+                        consolidated_data.extend(json_dict)  # Adiciona cada objeto à lista consolidada
                     except json.JSONDecodeError as e:
                         print(f"Erro ao decodificar JSON na página {page_number} do arquivo {file_name}: {e}")
                         print(f"Texto recebido: {json_text}")
