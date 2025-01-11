@@ -3,6 +3,7 @@ import pdfplumber
 import re
 import requests
 import json
+from deep_translator import GoogleTranslator
 from dotenv import load_dotenv
 
 # Carrega variáveis de ambiente do arquivo .env
@@ -78,7 +79,7 @@ def extract_text_from_pdfs():
     os.makedirs(output_dir, exist_ok=True)
 
     # Arquivo final para consolidar os resumos
-    consolidated_output = os.path.join(output_dir, "consolidated_summary.txt")
+    consolidated_output = os.path.join(output_dir, "consolidated_summary.md")
     with open(consolidated_output, "w", encoding="utf-8") as consolidated_file:
 
         # Itera pelos arquivos na pasta de entrada
@@ -90,12 +91,13 @@ def extract_text_from_pdfs():
                 with pdfplumber.open(input_path) as pdf:
                     for page_number, page in enumerate(pdf.pages, start=1):
                         text = page.extract_text() or ""
+                        text = GoogleTranslator(source='auto', target='en').translate(text)
                         cleaned_text = clean_text(text)
                         print(f"Processando página {page_number} do arquivo {file_name}...")
 
                         # Envia o texto limpo para a IA
                         summarized_text = make_request(cleaned_text)
-                        consolidated_file.write(f"=== Resumo da Página {page_number} ({file_name}) ===\n\n")
+                        consolidated_file.write(f"=== Page Summary {page_number} ({file_name}) ===\n\n")
                         consolidated_file.write(f"{summarized_text}\n\n")
 
                 print(f"Arquivo processado: {file_name}")
