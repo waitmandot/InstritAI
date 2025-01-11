@@ -1,4 +1,5 @@
 import os
+import re
 import uuid
 from datetime import datetime
 import pdfplumber
@@ -277,24 +278,21 @@ def extract_text_from_pdfs():
 
                     # Envia o texto interpretado para a IA formatar para JSON
                     formatted_text = format_to_json(summarized_text)
-                    if not formatted_text.strip().startswith("["):
-                        print(f"JSON inválido gerado na página {page_number} do arquivo {file_name}. Ignorando.")
-                        print(f"Texto recebido: {formatted_text}")
-                        continue
+
+
+                    # Usando expressão regular pra capturar tudo entre []
+                    match = re.search(r'\[.*]', formatted_text, re.DOTALL)
+                    if match:
+                        json_text = match.group(0)  # Pega o conteúdo do JSON
+                    else:
+                        print("JSON válido não encontrado.")
+
+                    print(json_text)
 
                     try:
-                        # Extrai apenas o JSON válido
-                        json_content = json.loads(formatted_text)
-
-                        # Atualiza os metadados para cada item
-                        for item in json_content:
-                            item["metadata"]["id"] = str(uuid.uuid4())
-                            item["metadata"]["source"]["file_name"] = file_name
-                            item["metadata"]["source"]["page_number"] = page_number
-                            item["metadata"]["created_at"] = datetime.now().isoformat()
 
                         # Adiciona ao consolidado
-                        consolidated_data.extend(json_content)
+                        consolidated_data.extend(formatted_text)
                     except json.JSONDecodeError as e:
                         print(f"Erro ao decodificar JSON na página {page_number} do arquivo {file_name}: {e}")
                         print(f"Texto recebido: {formatted_text}")
