@@ -1,4 +1,6 @@
 import os
+import uuid
+from datetime import datetime
 import pdfplumber
 import re
 import requests
@@ -235,40 +237,74 @@ def extract_text_from_pdfs():
     os.makedirs(output_dir, exist_ok=True)
 
     # Arquivo final para consolidar os resumos
-    consolidated_output = os.path.join(output_dir, "consolidated_summary.md")
+    consolidated_output = os.path.join(output_dir, "consolidated_summary.json")
+    consolidated_data = []
+
+    # Itera pelos arquivos na pasta de entrada
+    for file_name in os.listdir(input_dir):
+        if file_name.lower().endswith(".pdf"):
+            input_path = os.path.join(input_dir, file_name)
+
+            # Extrai o texto do PDF
+            with pdfplumber.open(input_path) as pdf:
+                total_pages = len(pdf.pages)
+                print(f"Processando arquivo: {file_name} ({total_pages} páginas)")
+
+                # Processamento por página
+                for page_number, page in enumerate(pdf.pages, start=1):
+                    # Extrai o texto bruto sem imagens do PDF
+                    text = page.extract_text() or ""
+                    if not text.strip():
+                        print(f"A página {page_number} do arquivo {file_name} está vazia. Ignorando.")
+                        continue
+
+                    # Traduz o texto bruto para o inglês
+                    translated_text = GoogleTranslator(source='auto', target='en').translate(text)
+
+                    # Envia o texto traduzido para ser limpo
+                    cleaned_text = clean_text(translated_text)
+                    if not cleaned_text.strip():
+                        print(f"Texto limpo na página {page_number} do arquivo {file_name} está vazio. Ignorando.")
+                        continue
+
+                    print(f"Processando página {page_number}/{total_pages} do arquivo {file_name}...")
+
+                    # Envia o texto limpo para a IA interpretar
+                    summarized_text = summarize(cleaned_text)
+                    if not summarized_text.strip():
+                        print(f"Resumo gerado na página {page_number} do arquivo {file_name} está vazio. Ignorando.")
+                        continue
+
+                    # Envia o texto interpretado para a IA formatar para JSON
+                    formatted_text = format_to_json(summarized_text)
+                    if not formatted_text.strip().startswith("["):
+                        print(f"JSON inválido gerado na página {page_number} do arquivo {file_name}. Ignorando.")
+                        print(f"Texto recebido: {formatted_text}")
+                        continue
+
+                    try:
+                        # Extrai apenas o JSON válido
+                        json_content = json.loads(formatted_text)
+
+                        # Atualiza os metadados para cada item
+                        for item in json_content:
+                            item["metadata"]["id"] = str(uuid.uuid4())
+                            item["metadata"]["source"]["file_name"] = file_name
+                            item["metadata"]["source"]["page_number"] = page_number
+                            item["metadata"]["created_at"] = datetime.now().isoformat()
+
+                        # Adiciona ao consolidado
+                        consolidated_data.extend(json_content)
+                    except json.JSONDecodeError as e:
+                        print(f"Erro ao decodificar JSON na página {page_number} do arquivo {file_name}: {e}")
+                        print(f"Texto recebido: {formatted_text}")
+
+    # Salva o JSON consolidado
     with open(consolidated_output, "w", encoding="utf-8") as consolidated_file:
-
-        # Itera pelos arquivos na pasta de entrada
-        for file_name in os.listdir(input_dir):
-            if file_name.lower().endswith(".pdf"):
-                input_path = os.path.join(input_dir, file_name)
-
-                # Extrai o texto do PDF
-                with pdfplumber.open(input_path) as pdf:
-                    # Processamento por página
-                    for page_number, page in enumerate(pdf.pages, start=1):
-
-                        # Extrai o texto bruto sem imagens do PDF
-                        text = page.extract_text() or ""
-
-                        # Traduz o texto bruto para o inglês
-                        translated_text = GoogleTranslator(source='auto', target='en').translate(text)
-
-                        # Envia o texto traduzido para ser limpo
-                        cleaned_text = clean_text(translated_text)
-                        print(f"Processando página {page_number} do arquivo {file_name}...")
-
-                        # Envia o texto limpo para a IA interpretar
-                        summarized_text = summarize(cleaned_text)
-
-                        # Envia o texto interpretado para a IA formatar para json
-                        formatted_text = format_to_json(summarized_text)
-
-                        consolidated_file.write(f"{formatted_text}\n\n")
-
-                print(f"Arquivo processado: {file_name}")
+        json.dump(consolidated_data, consolidated_file, indent=4, ensure_ascii=False)
 
     print(f"Resumo consolidado salvo em: {consolidated_output}")
+
 
 if __name__ == "__main__":
     extract_text_from_pdfs()
