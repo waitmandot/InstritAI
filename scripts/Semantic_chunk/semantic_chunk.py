@@ -242,6 +242,9 @@ def extract_text_from_pdfs():
     consolidated_output = os.path.join(output_dir, "consolidated_summary.json")
     consolidated_data = []
 
+    # Variável para contar as chamadas à IA
+    ia_requests_count = 0
+
     # Itera pelos arquivos na pasta de entrada
     for file_name in os.listdir(input_dir):
         if file_name.lower().endswith(".pdf"):
@@ -282,6 +285,7 @@ def extract_text_from_pdfs():
 
                         # Envia o texto limpo para a IA interpretar
                         summarized_text = summarize(cleaned_text)
+                        ia_requests_count += 1  # Incrementa a contagem para summarize
                         if not summarized_text.strip():
                             print(f"Resumo gerado vazio na página {page_number} do arquivo {file_name}. Ignorando.")
                             continue
@@ -292,6 +296,7 @@ def extract_text_from_pdfs():
                             try:
                                 # Envia o texto interpretado para a IA formatar para JSON
                                 formatted_text = format_to_json(summarized_text)
+                                ia_requests_count += 1  # Incrementa a contagem para format_to_json
 
                                 # Remove caracteres especiais indesejados e mantém apenas os válidos para JSON
                                 formatted_text = re.sub(r'[^a-zA-Z0-9,\[\]{}:\-\"\s_]', '', formatted_text)
@@ -330,6 +335,8 @@ def extract_text_from_pdfs():
     with open(consolidated_output, "w", encoding="utf-8") as consolidated_file:
         json.dump(consolidated_data, consolidated_file, indent=4, ensure_ascii=False)
 
+    # Exibe o número total de requisições feitas à IA
+    print(f"Número total de requisições feitas à IA: {ia_requests_count}")
     print(f"Resumo consolidado salvo em: {consolidated_output}")
 
 
