@@ -10,7 +10,7 @@ load_dotenv()
 OPENROUTER_KEY = os.getenv("OPENROUTER_KEY")
 API_URL = "https://openrouter.ai/api/v1/chat/completions"
 
-def make_request(message):
+def format_to_json(message):
     """
     Faz uma requisição para o modelo meta-llama/llama-3-8b-instruct:free.
 

@@ -7,12 +7,12 @@ from deep_translator import GoogleTranslator
 load_dotenv()
 
 # Configuração da API
-OPENROUTER_KEY = os.getenv("API_KEY")
+OPENROUTER_KEY = os.getenv("OPENROUTER_KEY")
 API_URL = os.getenv("https://openrouter.ai/api/v1/chat/completions")
 MODEL = "meta-llama/llama-3.2-3b-instruct:free"
 
 # Verifica se as variáveis necessárias estão configuradas
-if not API_KEY or not API_URL:
+if not OPENROUTER_KEY or not API_URL:
     raise ValueError("API_KEY ou API_URL não estão configuradas corretamente. Verifique o arquivo .env.")
 
 # Inicialize a lista global para armazenar o log da sessão
@@ -81,7 +81,7 @@ def ask_model(query):
         "temperature": 0.0,
     }
     headers = {
-        "Authorization": f"Bearer {API_KEY}",
+        "Authorization": f"Bearer {OPENROUTER_KEY}",
         "Content-Type": "application/json",
     }
 
