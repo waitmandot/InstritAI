@@ -112,26 +112,28 @@ def format_to_json(message):
                     "2. Each section (title + paragraph) should be transformed into its own JSON object.\n\n"
                     "### Output JSON Format:\n"
                     "The output must be in English and follow this exact structure:\n"
-                    "{\n"
-                    '    "metadata": {\n'
-                    '        "id": "",  // Leave this field blank for later completion.\n'
-                    '        "source": {\n'
-                    '            "file_name": "",  // Leave this field blank for later completion.\n'
-                    '            "page_number": ""  // Leave this field blank for later completion.\n'
-                    "        },\n"
-                    '        "title": "Title of the section",\n'
-                    '        "tags": ["tag1", "tag2", "tag3"],  // Generate 3-5 tags based on the content.\n'
-                    '        "created_at": ""  // Leave this field blank.\n'
-                    "    },\n"
-                    '    "content": {\n'
-                    '        "text": "Full text of the paragraph goes here.",\n'
-                    '        "summary": "Short summary of the paragraph in one or two sentences."\n'
-                    "    },\n"
-                    '    "context": {\n'
-                    '        "preceding_text": "Text preceding this section in the input, if any.",\n'
-                    '        "following_text": "Text following this section in the input, if any."\n'
-                    "    }\n"
-                    "}\n\n"
+                    "[\n"
+                        "{\n"
+                    '       "metadata": {\n'
+                    '           "id": "",  // Leave this field blank for later completion.\n'
+                    '           "source": {\n'
+                    '               "file_name": "",  // Leave this field blank for later completion.\n'
+                    '               "page_number": ""  // Leave this field blank for later completion.\n'
+                    "           },\n"
+                    '           "title": "Title of the section",\n'
+                    '           "tags": ["tag1", "tag2", "tag3"],  // Generate 3 tags (words) based on the content.\n'
+                    '           "created_at": ""  // Leave this field blank.\n'
+                    "       },\n"
+                    '       "content": {\n'
+                    '           "text": "Full text of the paragraph goes here.",\n'
+                    '           "summary": "Short summary of the paragraph in one or two sentences."\n'
+                    "       },\n"
+                    '       "context": {\n'
+                    '           "preceding_text": "Text preceding this section in the input, if any.",\n'
+                    '           "following_text": "Text following this section in the input, if any."\n'
+                    "       }\n"
+                    "   }\n"
+                    "]\n\n"
                     "### Requirements:\n"
                     "1. Leave the fields id, file_name, page_number, and created_at blank in the output.\n"
                     "2. Remove the fields author, last_updated, and related_chunks.\n"
@@ -139,7 +141,6 @@ def format_to_json(message):
                     "4. Include preceding_text and following_text to preserve document flow.\n"
                     "5. Use the section titles as the title field and ensure proper capitalization.\n\n"
                     "### Example Input:\n"
-                    "=== Page 5 Summary ===\n\n"
                     "**Friction Concept**\n\n"
                     "Friction is a resistance opposing motion, measured as a force called frictional force. It exists in all types of motion among solids, liquids, or gases. In solids, friction manifests as the resistance encountered when moving one body over another. Friction greatly influences human life, acting either for or against motion, depending on the context.\n\n"
                     "**Types of Friction**\n\n"
@@ -156,7 +157,7 @@ def format_to_json(message):
                     '                "page_number": ""\n'
                     '            },\n'
                     '            "title": "Friction Concept",\n'
-                    '            "tags": ["friction", "physics", "motion", "resistance"],\n'
+                    '            "tags": ["physics", "motion", "resistance"],\n'
                     '            "created_at": ""\n'
                     '        },\n'
                     '        "content": {\n'
@@ -176,7 +177,7 @@ def format_to_json(message):
                     '                "page_number": ""\n'
                     '            },\n'
                     '            "title": "Types of Friction",\n'
-                    '            "tags": ["friction", "types", "solids", "fluids", "gases"],\n'
+                    '            "tags": ["types", "fluids", "gases"],\n'
                     '            "created_at": ""\n'
                     '        },\n'
                     '        "content": {\n'
@@ -196,7 +197,7 @@ def format_to_json(message):
                     '                "page_number": ""\n'
                     '            },\n'
                     '            "title": "Importance of Lubrication",\n'
-                    '            "tags": ["lubrication", "machines", "efficiency", "friction"],\n'
+                    '            "tags": ["machines", "efficiency", "friction"],\n'
                     '            "created_at": ""\n'
                     '        },\n'
                     '        "content": {\n'
@@ -253,67 +254,77 @@ def extract_text_from_pdfs():
 
                 # Processamento por página
                 for page_number, page in enumerate(pdf.pages, start=1):
-                    # Data e hora do processamento por página
-                    page_processing_time = datetime.now().isoformat()
-
-                    # Extrai o texto bruto sem imagens do PDF
-                    text = page.extract_text() or ""
-                    if not text.strip():
-                        print(f"A página {page_number} do arquivo {file_name} está vazia. Ignorando.")
-                        continue
-
-                    # Traduz o texto bruto para o inglês
-                    translated_text = GoogleTranslator(source='auto', target='en').translate(text)
-
-                    # Verifica se o texto traduzido está vazio
-                    if not translated_text.strip():
-                        print(f"Texto traduzido vazio na página {page_number} do arquivo {file_name}. Ignorando.")
-                        continue
-
-                    # Envia o texto traduzido para ser limpo
-                    cleaned_text = clean_text(translated_text)
-                    if not cleaned_text.strip():
-                        print(f"Texto limpo na página {page_number} do arquivo {file_name} está vazio. Ignorando.")
-                        continue
-
-                    print(f"Processando página {page_number}/{total_pages} do arquivo {file_name}...")
-
-                    # Envia o texto limpo para a IA interpretar
-                    summarized_text = summarize(cleaned_text)
-                    if not summarized_text.strip():
-                        print(f"Resumo gerado vazio na página {page_number} do arquivo {file_name}. Ignorando.")
-                        continue
-
-                    # Envia o texto interpretado para a IA formatar para JSON
-                    formatted_text = format_to_json(summarized_text)
-
-                    # Remove caracteres especiais indesejados e mantém apenas os válidos para JSON
-                    formatted_text = re.sub(r'[^a-zA-Z0-9,\[\]{}:\-\"\s_]', '', formatted_text)
-
-                    # Usando expressão regular pra capturar tudo entre colchetes []
-                    match = re.search(r'\[(.*)]$', formatted_text, re.DOTALL)
-                    if not match:
-                        print(f"JSON válido não encontrado na página {page_number} do arquivo {file_name}.")
-                        print(f"Texto retornado pela IA: {formatted_text}")
-                        continue
-
-                    json_text = match.group(1)  # Pega o conteúdo do JSON sem os colchetes
-
                     try:
-                        # Converte o texto JSON em um dicionário Python
-                        json_dict = json.loads(f"[{json_text}]")  # Certifica que o texto seja interpretado como JSON válido
+                        # Data e hora do processamento por página
+                        page_processing_time = datetime.now().isoformat()
 
-                        # Adiciona os campos adicionais necessários
-                        for element in json_dict:
-                            element["metadata"]["id"] = str(uuid.uuid4())  # Gera um ID único
-                            element["metadata"]["source"]["file_name"] = file_name  # Adiciona o nome do arquivo
-                            element["metadata"]["source"]["page_number"] = page_number  # Adiciona o número da página
-                            element["metadata"]["created_at"] = page_processing_time  # Adiciona a data e hora por página
+                        # Extrai o texto bruto sem imagens do PDF
+                        text = page.extract_text() or ""
+                        if not text.strip():
+                            print(f"A página {page_number} do arquivo {file_name} está vazia. Ignorando.")
+                            continue
 
-                        consolidated_data.extend(json_dict)  # Adiciona cada objeto à lista consolidada
-                    except json.JSONDecodeError as e:
-                        print(f"Erro ao decodificar JSON na página {page_number} do arquivo {file_name}: {e}")
-                        print(f"Texto recebido pela IA: {json_text}")
+                        # Traduz o texto bruto para o inglês
+                        translated_text = GoogleTranslator(source='auto', target='en').translate(text)
+
+                        # Verifica se o texto traduzido está vazio
+                        if not translated_text.strip():
+                            print(f"Texto traduzido vazio na página {page_number} do arquivo {file_name}. Ignorando.")
+                            continue
+
+                        # Envia o texto traduzido para ser limpo
+                        cleaned_text = clean_text(translated_text)
+                        if not cleaned_text.strip():
+                            print(f"Texto limpo na página {page_number} do arquivo {file_name} está vazio. Ignorando.")
+                            continue
+
+                        print(f"Processando página {page_number}/{total_pages} do arquivo {file_name}...")
+
+                        # Envia o texto limpo para a IA interpretar
+                        summarized_text = summarize(cleaned_text)
+                        if not summarized_text.strip():
+                            print(f"Resumo gerado vazio na página {page_number} do arquivo {file_name}. Ignorando.")
+                            continue
+
+                        # Repetição começa na formatação para JSON
+                        page_processed = False
+                        while not page_processed:
+                            try:
+                                # Envia o texto interpretado para a IA formatar para JSON
+                                formatted_text = format_to_json(summarized_text)
+
+                                # Remove caracteres especiais indesejados e mantém apenas os válidos para JSON
+                                formatted_text = re.sub(r'[^a-zA-Z0-9,\[\]{}:\-\"\s_]', '', formatted_text)
+
+                                # Usando expressão regular pra capturar tudo entre colchetes []
+                                match = re.search(r'\[(.*)]$', formatted_text, re.DOTALL)
+                                if not match:
+                                    print(f"JSON válido não encontrado na página {page_number} do arquivo {file_name}.")
+                                    print(f"Texto retornado pela IA: {formatted_text}")
+                                    raise ValueError("JSON inválido gerado pela IA.")
+
+                                json_text = match.group(1)  # Pega o conteúdo do JSON sem os colchetes
+
+                                # Converte o texto JSON em um dicionário Python
+                                json_dict = json.loads(f"[{json_text}]")  # Certifica que o texto seja interpretado como JSON válido
+
+                                # Adiciona os campos adicionais necessários
+                                for element in json_dict:
+                                    element["metadata"]["id"] = str(uuid.uuid4())  # Gera um ID único
+                                    element["metadata"]["source"]["file_name"] = file_name  # Adiciona o nome do arquivo
+                                    element["metadata"]["source"]["page_number"] = page_number  # Adiciona o número da página
+                                    element["metadata"]["created_at"] = page_processing_time  # Adiciona a data e hora por página
+
+                                consolidated_data.extend(json_dict)  # Adiciona cada objeto à lista consolidada
+                                page_processed = True  # Marca a página como processada com sucesso
+                            except Exception as e:
+                                print(f"Erro ao processar JSON na página {page_number} do arquivo {file_name}: {e}")
+                                print("Tentando novamente...")
+                                print(f"Processando página {page_number}/{total_pages} do arquivo {file_name}...")
+                                # A execução continuará repetindo até que seja bem-sucedida
+
+                    except Exception as e:
+                        print(f"Erro geral ao processar a página {page_number} do arquivo {file_name}: {e}")
 
     # Salva o JSON consolidado
     with open(consolidated_output, "w", encoding="utf-8") as consolidated_file:
