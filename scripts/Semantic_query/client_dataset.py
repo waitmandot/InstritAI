@@ -19,6 +19,8 @@ def main():
             # Cria o payload
             payload = {"pergunta": pergunta}
 
+            print(f"pergunta: {pergunta}")
+
             try:
                 # Faz a requisição para o servidor FastAPI
                 response = requests.post(API_URL, json=payload)

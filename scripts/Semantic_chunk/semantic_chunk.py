@@ -302,7 +302,7 @@ def extract_text_from_pdfs():
                                 ia_requests_count += 1  # Incrementa a contagem para format_to_json
 
                                 # Remove caracteres especiais indesejados e mantém apenas os válidos para JSON
-                                formatted_text = re.sub(r'[^a-zA-Z0-9,\[\]{}:\-\"\s_]', '', formatted_text)
+                                formatted_text = re.sub(r'[^a-zA-Z0-9,\[\]{}:\-\"\s_.!]', '', formatted_text)
 
                                 # Usando expressão regular pra capturar tudo entre colchetes []
                                 match = re.search(r'\[(.*)]$', formatted_text, re.DOTALL)

@@ -3,21 +3,14 @@ import requests
 import uuid
 from dotenv import load_dotenv
 from qdrant_client import QdrantClient
-from langchain_community.document_loaders import DataFrameLoader
-from datasets import load_dataset
 from qdrant_client.models import VectorParams, Distance, PointStruct
+from datasets import load_dataset
 
 # Carregar variáveis de ambiente
 load_dotenv()
 QDRANT_KEY = os.getenv("QDRANT_KEY")
-NOMIC_API_URL = os.getenv("NOMIC_API_URL", "http://localhost:11434/api/embeddings")
-NOMIC_MODEL = os.getenv("NOMIC_MODEL", "nomic-embed-text")
-
-# Validar configurações
-if not QDRANT_KEY:
-    raise ValueError("A chave API QDRANT_KEY não foi encontrada no arquivo .env")
-if not NOMIC_API_URL:
-    raise ValueError("A URL da API do Nomic não foi encontrada no arquivo .env")
+NOMIC_API_URL = "http://localhost:11434/api/embeddings"
+NOMIC_MODEL = "nomic-embed-text"
 
 # Configurações da coleção
 COLLECTION_NAME = "chatbot"
@@ -57,8 +50,25 @@ else:
 # Carregar dataset
 print("[LOG] Carregando dataset...")
 dataset = load_dataset("waitmandot/test", split="train")
-data = dataset.to_pandas()
-docs = data[["chunk", "title"]]
+
+# Processar 10 documentos para fins de teste
+print("[LOG] Processando documentos...")
+documents = []
+for idx, record in enumerate(dataset):
+    if idx >= 10:
+        break
+    documents.append({
+        "id": record["metadata"]["id"],
+        "title": record["metadata"]["title"],
+        "tags": record["metadata"]["tags"],
+        "created_at": record["metadata"]["created_at"],
+        "content": record["content"]["text"],
+        "summary": record["content"]["summary"],
+        "preceding_text": record["context"]["preceding_text"],
+        "following_text": record["context"]["following_text"]
+    })
+
+print(f"[LOG] {len(documents)} documentos processados para teste.")
 
 # Função para obter embeddings
 def get_embedding(text: str, model: str = NOMIC_MODEL):
@@ -76,25 +86,29 @@ def get_embedding(text: str, model: str = NOMIC_MODEL):
         print(f"[ERRO] Falha ao obter embedding: {e}")
         return None
 
-# Gerar embeddings
+# Gerar embeddings e preparar pontos para o Qdrant
 print("[LOG] Gerando embeddings...")
-loader = DataFrameLoader(docs, page_content_column="chunk")
-loaded_documents = loader.load()
-
 points = []
-for idx, doc in enumerate(loaded_documents, 1):
-    embedding = get_embedding(doc.page_content)
+for idx, doc in enumerate(documents):
+    embedding = get_embedding(doc["content"])
     if embedding:
         points.append(
             PointStruct(
-                id=str(uuid.uuid4()),
+                id=doc["id"],
                 vector=embedding,
-                payload={"content": doc.page_content, "title": doc.metadata.get("title")},
+                payload={
+                    "title": doc["title"],
+                    "tags": doc["tags"],
+                    "created_at": doc["created_at"],
+                    "summary": doc["summary"],
+                    "preceding_text": doc["preceding_text"],
+                    "following_text": doc["following_text"]
+                },
             )
         )
-        print(f"[LOG] Documento {idx}/{len(loaded_documents)} processado.")
+        print(f"[LOG] Documento {idx + 1}/{len(documents)} processado.")
     else:
-        print(f"[ERRO] Falha ao gerar embedding para o documento {idx}/{len(loaded_documents)}.")
+        print(f"[ERRO] Falha ao gerar embedding para o documento {idx + 1}/{len(documents)}.")
 
 # Subir pontos para o Qdrant
 if points:

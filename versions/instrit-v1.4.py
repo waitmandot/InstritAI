@@ -16,8 +16,8 @@ from deep_translator import GoogleTranslator
 load_dotenv()
 
 # OpenRouter API Configuration
-OPENROUTER_KEY = os.getenv("API_KEY")
-API_URL = os.getenv("https://openrouter.ai/api/v1/chat/completions")
+OPENROUTER_KEY = os.getenv("OPENROUTER_KEY")
+API_URL = "https://openrouter.ai/api/v1/chat/completions"
 
 # Qdrant API Configuration
 QDRANT_KEY = os.getenv("QDRANT_KEY")
@@ -75,13 +75,28 @@ class EnhancedChatbot:
         """Load and prepare dataset."""
         print("[LOG] Loading dataset...")
         dataset = load_dataset("waitmandot/test", split="train")
-        print("[LOG] Converting dataset to Pandas DataFrame...")
-        data = dataset.to_pandas()
-        print("[LOG] Selecting relevant columns...")
-        docs = data[['chunk', 'title']]
-        print("[LOG] Loading documents in expected format...")
-        loader = DataFrameLoader(docs, page_content_column="chunk")
-        return loader.load()
+
+        # Parse the new JSON structure
+        print("[LOG] Converting dataset to structured format...")
+        documents = []
+        for idx, record in enumerate(dataset):
+            if idx >= 10:  # Process only the first 10 records
+                break
+            document = {
+                "id": record["metadata"]["id"],
+                "title": record["metadata"]["title"],
+                "tags": record["metadata"]["tags"],
+                "created_at": record["metadata"]["created_at"],
+                "content": record["content"]["text"],
+                "summary": record["content"]["summary"],
+                "context": {
+                    "preceding_text": record["context"]["preceding_text"],
+                    "following_text": record["context"]["following_text"]
+                }
+            }
+            documents.append(document)
+        print(f"[LOG] Loaded {len(documents)} documents.")
+        return documents
 
     def generate_embeddings(self, documents_list):
         """Generate embeddings sequentially."""
@@ -89,15 +104,19 @@ class EnhancedChatbot:
         embeddings_list = []
         total_docs = len(documents_list)
         for idx, doc in enumerate(documents_list, 1):
-            embedding = self.get_embedding(doc.page_content)
+            embedding = self.get_embedding(doc["content"])
             if embedding:
-                embeddings_list.append(embedding)
+                embeddings_list.append({
+                    "id": doc["id"],
+                    "vector": embedding,
+                    "payload": doc
+                })
             else:
                 print(f"[ERROR] Failed to generate embedding for document {idx}/{total_docs}.")
             print(f"[LOG] Progress: {idx}/{total_docs} documents processed.")
         return embeddings_list
 
-    def initialize_qdrant(self, docs, embed_list):
+    def initialize_qdrant(self, embed_list):
         """Initialize and configure Qdrant."""
         print("[LOG] Configuring Qdrant...")
         self.qdrant_client = QdrantClient(":memory:")
@@ -105,16 +124,16 @@ class EnhancedChatbot:
         if not self.qdrant_client.collection_exists(collection_name="chatbot"):
             self.qdrant_client.create_collection(
                 collection_name="chatbot",
-                vectors_config=VectorParams(size=len(embed_list[0]), distance=Distance.COSINE)
+                vectors_config=VectorParams(size=len(embed_list[0]["vector"]), distance=Distance.COSINE)
             )
 
         points = [
             PointStruct(
-                id=str(uuid.uuid4()),
-                vector=embed_list[i],
-                payload={"content": doc.page_content}
+                id=doc["id"],
+                vector=doc["vector"],
+                payload=doc["payload"]
             )
-            for i, doc in enumerate(docs)
+            for doc in embed_list
         ]
 
         self.qdrant_client.upsert(collection_name="chatbot", points=points)
@@ -188,7 +207,7 @@ class EnhancedChatbot:
             "temperature": 0.0,
         }
         headers = {
-            "Authorization": f"Bearer {API_KEY}",
+            "Authorization": f"Bearer {OPENROUTER_KEY}",
             "Content-Type": "application/json",
         }
 
@@ -288,7 +307,7 @@ class EnhancedChatbot:
         }
 
         headers = {
-            "Authorization": f"Bearer {API_KEY}",
+            "Authorization": f"Bearer {OPENROUTER_KEY}",
             "Content-Type": "application/json"
         }
 
@@ -328,7 +347,7 @@ class EnhancedChatbot:
             return
 
         # Initialize Qdrant
-        self.initialize_qdrant(loaded_documents, generated_embeddings)
+        self.initialize_qdrant(generated_embeddings)
 
         print("[LOG] Chatbot initialized and ready.")
 
